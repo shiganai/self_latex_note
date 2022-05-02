@@ -1,0 +1,9 @@
+*.aux
+*.dvi
+*/out/
+*/*/out/
+*.log
+*.gz
+*.code-workspace
+*.edited.docx
+*short_compile.tex

@@ -1,0 +1,59 @@
+\documentclass[a4paper,11pt]{jsarticle}
+
+
+% 数式
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{siunitx}
+\usepackage{wrapfig}
+\usepackage{cases}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+
+\begin{document}
+
+\title{棒上宙の角度について}
+\author{平林広}
+\date{\today}
+\maketitle
+
+万歳姿勢(Handsup)で回りすぎず、伸身姿勢(Stretched)で回転不足にならないことが必要。
+そのうえで、その中間が最も操作しやすいはず（根拠なし）。
+
+それぞれの姿勢での回転速度$\omega_{H},\omega_{S}$は
+重心周りの角運動量を$L_G$、慣性モーメントをそれぞれ$I_{H},I_{S}$として
+\begin{eqnarray}
+  \omega_{S} = \frac{L_G}{I_{S}} \\
+  \omega_{H} = \frac{L_G}{I_{H}}
+\end{eqnarray}
+と表せる。
+
+離手から倒立までの時間を$t$、初めの胴体の角度を$\theta_0$として、
+簡便のために倒立時の姿勢の角度を
+\begin{eqnarray}
+  \theta_S = \theta_0 + t \omega_S \\
+  \theta_H = \theta_0 + t \omega_H
+\end{eqnarray}
+とする。
+
+回りすぎない、回転不足でない、という条件はそれぞれ
+\begin{eqnarray}
+  \theta_S > 2 * \pi \\
+  \theta_H < 2 * \pi
+\end{eqnarray}
+と表せば、
+\begin{eqnarray*}
+  \theta_0 + t \frac{L_G}{I_S} > 2 * \pi \\
+  \theta_0 + t \frac{L_G}{I_H} < 2 * \pi
+\end{eqnarray*}
+\begin{align*}
+  \therefore & \quad L_G > \frac{I_S}{t}(2 *\pi-\theta_0)\\
+  & \quad L_G < \frac{I_S}{t}(2 *\pi-\theta_0)\\
+\end{align*}
+
+\end{document}
