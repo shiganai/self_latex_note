@@ -61,16 +61,16 @@ lineskip=-0.5ex
 
 \subsection{準備}
 \begin{align}
-  ma &= -mg - ky
+  ma & = -mg - ky
   \\ &= -k\left(y + \frac{mg}{k}\right)
 \end{align}
 \begin{align}
-  \therefore 
+  \therefore
   \left(y+\frac{mg}{k}\right) = A\sin(\omega t) + B\cos(\omega t)
 \end{align}
 ただし、$t=0$で$y=0,\dot{y}=0$より、
 \begin{align}
-  y &= -\frac{mg}{k} + \frac{mg}{k}\cos(\omega t)
+  y & = -\frac{mg}{k} + \frac{mg}{k}\cos(\omega t)
   \\ &= \frac{mg}{k}\left(-1+\cos(\omega t)\right)
 \end{align}
 
@@ -81,7 +81,7 @@ lineskip=-0.5ex
 *ばね板にちゃんと質量(M)を持たせると、
 \begin{align}
   \begin{cases}
-    M\ddot{y} &= -F_y - ky
+    M\ddot{y} & = -F_y - ky
     \\ m\ddot{y} &= F_y
   \end{cases}
 \end{align}
@@ -96,62 +96,411 @@ $\frac{2\pi}{\omega}$
 
 \subsection{貢献}
 先に結論だけ書く。
-保存力だけだとうまく判断できない。
-\begin{enumerate}
-  \item 力積
-  重力による力積は
-  \begin{align}
-    \int_0^{\frac{2\pi}{\omega}} -mg dt = -mg \frac{2\pi}{\omega}
-  \end{align}
+力積だと重力がいたずらに負に評価されて、
+仕事量、単位付き力積だとどっちも0になる。
+仕事量、単位付き力積がうまく評価できている。
 
-  ばねの弾性による力積は
-  \begin{align}
-    \int_0^{\frac{2\pi}{\omega}} -ky dt &= -k \int_0^{\frac{2\pi}{\omega}} \frac{mg}{k}\left(-1+\cos(\omega t)\right)
-    \\ &= -mg \int_0^{\frac{2\pi}{\omega}} \left(-1+\cos(\omega t)\right) dt
-    \\ &= -mg \left[-t+\frac{1}{\omega}\sin(\omega t)\right]_0^{\frac{2\pi}{\omega}}
-    \\ &= -mg \left( -\frac{2\pi}{\omega} \right) = mg \frac{2\pi}{\omega}
-  \end{align}
+\subsubsection{力積}
+重力による力積は
+\begin{align}
+  \int_0^{\frac{2\pi}{\omega}} -mg dt = -mg \frac{2\pi}{\omega}
+\end{align}
 
-  離ばね地点において元の状態に戻っているから、正味の力積が0になるのは妥当。
+ばねの弾性による力積は
+\begin{align}
+  \int_0^{\frac{2\pi}{\omega}} -ky dt & = -k \int_0^{\frac{2\pi}{\omega}} \frac{mg}{k}\left(-1+\cos(\omega t)\right)
+  \\ &= -mg \int_0^{\frac{2\pi}{\omega}} \left(-1+\cos(\omega t)\right) dt
+  \\ &= -mg \left[-t+\frac{1}{\omega}\sin(\omega t)\right]_0^{\frac{2\pi}{\omega}}
+  \\ &= -mg \left( -\frac{2\pi}{\omega} \right) = mg \frac{2\pi}{\omega}
+\end{align}
 
-  \item 仕事量
-  重力による仕事量は
-  \begin{align}
-    \int_0^{\frac{2\pi}{\omega}} -mg\cdot\dot{y} dt = \int_{t=0}^{t=\frac{2\pi}{\omega}} -mg dy = 0
-  \end{align}
-  位置エネルギーの変化分だから0になるのは妥当。
+離ばね地点において元の状態に戻っているから、正味の力積が0になるのは妥当。
 
-  ばねの弾性による仕事量も
-  \begin{align}
-    \int_0^{\frac{2\pi}{\omega}} -ky \cdot\dot{y} dt
-    &= \int_{t=0}^{t=\frac{2\pi}{\omega}} -kydy
-    \\&= \left[-\frac{1}{2}ky^2\right]_{t=0}^{t=\frac{2\pi}{\omega}} = 0
-  \end{align}
-  位置エネルギーの変化分だから0になるのは妥当。
+\subsubsection{仕事量}
+重力による仕事量は
+\begin{align}
+  \int_0^{\frac{2\pi}{\omega}} -mg\cdot\dot{y} dt = \int_{t=0}^{t=\frac{2\pi}{\omega}} -mg dy = 0
+\end{align}
+位置エネルギーの変化分だから0になるのは妥当。
 
-  離ばね地点において元の状態に戻っているから、正味の仕事量が0になるのは妥当。
+ばねの弾性による仕事量も
+\begin{align}
+  \int_0^{\frac{2\pi}{\omega}} -ky \cdot\dot{y} dt
+   & = \int_{t=0}^{t=\frac{2\pi}{\omega}} -kydy
+  \\&= \left[-\frac{1}{2}ky^2\right]_{t=0}^{t=\frac{2\pi}{\omega}} = 0
+\end{align}
+位置エネルギーの変化分だから0になるのは妥当。
 
-  \item $\int\sigma (vy_G)ay_G dt$ で表される単位付き力積
-  重力による単位付き力積は
-  \begin{align}
-    \int_0^{\frac{\pi}{\omega}} -mg\cdot(-1) dt + \int_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}} -mg\cdot(1) dt
-    &= mg\frac{\pi}{\omega} + \left(-mg\frac{\pi}{\omega}\right) = 0
-  \end{align}
+離ばね地点において元の状態に戻っているから、正味の仕事量が0になるのは妥当。
 
-  ばねの弾性による単位付き力積は
-  \begin{align}
-    \int_0^{\frac{\pi}{\omega}} -ky\cdot(-1) dt 
-    &+ \int_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}} -ky\cdot(1) dt
-    \\ &= k \int_0^{\frac{\pi}{\omega}} \frac{mg}{k}\left(-1+\cos(\omega t)\right)
-    - k \int_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}} \frac{mg}{k}\left(-1+\cos(\omega t)\right)
-    \\&= mg \left[-t+\frac{1}{\omega}\sin(\omega t)\right]_0^{\frac{\pi}{\omega}}
-    - mg \left[-t+\frac{1}{\omega}\sin(\omega t)\right]_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}}
-    \\&= mg \left( -\frac{\pi}{\omega} + 0 \right)
-    - mg\left( -\frac{\pi}{\omega} + 0 \right)
-    \\ &= 0
-  \end{align}
+\subsubsection{$\int\sigma (vy_G)ay_G dt$ で表される単位付き力積}
+重力による単位付き力積は
+\begin{align}
+  \int_0^{\frac{\pi}{\omega}} -mg\cdot(-1) dt + \int_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}} -mg\cdot(1) dt
+   & = mg\frac{\pi}{\omega} + \left(-mg\frac{\pi}{\omega}\right) = 0
+\end{align}
 
-\end{enumerate}
+ばねの弾性による単位付き力積は
+\begin{align}
+  \int_0^{\frac{\pi}{\omega}} -ky\cdot(-1) dt
+   & + \int_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}} -ky\cdot(1) dt
+  \\ &= k \int_0^{\frac{\pi}{\omega}} \frac{mg}{k}\left(-1+\cos(\omega t)\right)
+  - k \int_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}} \frac{mg}{k}\left(-1+\cos(\omega t)\right)
+  \\&= mg \left[-t+\frac{1}{\omega}\sin(\omega t)\right]_0^{\frac{\pi}{\omega}}
+  - mg \left[-t+\frac{1}{\omega}\sin(\omega t)\right]_{\frac{\pi}{\omega}}^{\frac{2\pi}{\omega}}
+  \\&= mg \left( -\frac{\pi}{\omega} + 0 \right)
+  - mg\left( -\frac{\pi}{\omega} + 0 \right)
+  \\ &= 0
+\end{align}
 
+
+\section{Case: 単純なばね(落下あり)}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = 0.6\textwidth]{fall_and_spring.png}
+  \caption{}
+  \label{fall_and_spring.png}
+\end{figure}
+
+\subsection{準備}
+\subsubsection{落下時}
+
+\begin{align}
+  y
+   & = h - \frac{1}{2}gt^2
+  \\ &= \frac{1}{2}g{t_h}^2 - \frac{1}{2}gt^2
+\end{align}
+つまり落下区間は$0\leq t \leq t_h$となるが、
+あとあと面倒なので、落下区間を$-t_h\leq t \leq 0$とする。
+$t = 0$の時
+$vy = -gt_h$
+
+\subsubsection{ばね板についてるとき}
+\begin{align}
+  ma & = -mg - ky
+  \\ &= -k\left(y + \frac{mg}{k}\right)
+\end{align}
+\begin{align}
+  \therefore
+  \left(y+\frac{mg}{k}\right) = A\sin(\omega t) + B\cos(\omega t)
+\end{align}
+ただし、$t=0$で$y=0,\dot{y}=-gt_h$より、
+\begin{align}
+  y & = -\frac{mg}{k} - \frac{gt_h}{\omega}\sin(\omega t) + \frac{mg}{k}\cos(\omega t)
+  \\ &= -\frac{mg}{k} + \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}\cos \left( \omega t + A \right)
+\end{align}
+
+\begin{align}
+  \cos\left( \omega t + A \right)
+   & = \cos \omega t \cos A - \sin \omega t \sin A
+  \\&= \frac{\frac{mg}{k}}{\sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}}\cos\omega t
+  - \frac{\frac{gt_h}{\omega}}{\sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}}\sin \omega t
+\end{align}
+\begin{align}
+  \cos A & = \frac{\frac{mg}{k}}{\sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}}
+  \\ \sin A &= \frac{\frac{gt_h}{\omega}}{\sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}}
+\end{align}
+
+そんで、ばね板から離れる条件はもちろん
+\begin{align}
+  F_y = 0 \Leftrightarrow ky = 0 \Leftrightarrow y = 0
+\end{align}
+
+*ばね板にちゃんと質量(M)を持たせると、
+衝突は完全非弾性衝突かつ運動量の保存を考える必要がある。
+
+着ばねから離ばねまでの時間はきれいにあらわされないが、$T$でおくと、
+\begin{align}
+   & \begin{cases}
+        & -\frac{mg}{k} + \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \cos \left( \omega T + A \right) = 0
+       \\& 0 + \omega \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \left( - \sin \left( \omega T + A \right) \right) = gt_h
+     \end{cases}
+  \\& \Leftrightarrow
+  \begin{cases}
+    \cos \left( \omega T + A \right) & = \frac{ \frac{mg}{k} }{ \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} }
+    \\ \sin \left( \omega T + A \right) &= - \frac{gt_h}{ \omega \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} }
+  \end{cases}
+\end{align}
+
+\subsection{貢献}
+先に結論だけ書く。
+力積だと重力がいたずらに負に評価されて、
+仕事量、単位付き力積だと重力がいい感じに正に評価される。
+仕事量、単位付き力積がうまく評価できている。
+\subsubsection{力積}
+重力による力積は
+\begin{align}
+  \int_{-t_h}^{T} -mg dt = -mg \left(T + t_h\right)
+\end{align}
+
+ばねの弾性による力積は
+\begin{align}
+   & \int_0^T -ky dt
+  \\ & = -k \int_0^T
+  \left( -\frac{mg}{k} + \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \cos \left( \omega t + A \right) \right) dt
+  \\ & = mgT - k \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \int_0^T \cos \left( \omega t + A \right) dt
+  \\ & = mgT - k \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \left[ \frac{1}{\omega} \sin (\omega t + A) \right]_0^T
+  \\ & \begin{aligned}
+    = mgT -
+     & \left\{ \frac{k}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}
+    \cdot \left[- \frac{gt_h}{ \omega \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} } \right] \right.
+    \\
+     & \ \left. - \frac{k}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}
+    \cdot \left[ \frac{\frac{gt_h}{\omega}}{\sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}} \right] \right\}
+  \end{aligned}
+  \\& = mgT - \left\{ - \frac{2k}{\omega^2} gt_h \right\}
+  \\& = mgT + 2mgt_h
+\end{align}
+
+合計が
+\begin{align}
+  \int_{-t_h}^{T} -mg dt + \int_0^T -ky dt
+  = \left( -mgT - mgt_h \right) + \left( mgT + 2mgt_h \right) = mgt_h
+\end{align}
+でちゃんと跳ね返った後の運動量に一致するからオッケー
+
+\subsubsection{仕事量}
+重力による仕事量は
+\begin{align}
+  \int_{-t_h}^{T} -mg \cdot \dot{y} dt
+   & = \int_{t=-t_h}^{t=T} -mgdy
+  \\
+   & = -mg(0 - h) = mgh
+\end{align}
+
+ばねの弾性による仕事量は
+\begin{align}
+  \int_{0}^{T} -ky \cdot \dot{y} dt
+   & = \int_{t=0}^{t=T} -kydy
+  \\
+   & = \left[ -\frac{1}{2} ky^2 \right]_{t=0}^{t=T}
+  = -\frac{1}{2}k (0 - 0) = 0
+\end{align}
+
+\subsubsection{$\int\sigma (vy_G)ay_G dt$ で表される単位付き力積}
+重力による単位付き力積は
+\begin{align}
+  \int_{-t_h}^{T/2} -mg \cdot (-1) dt
+  + \int_{T/2}^{T} -mg \cdot (1) dt
+   & = \int_{t=-t_h}^{t=T} -mgdy
+  \\
+   & = -mg(0 - h) = mgh
+\end{align}
+
+ばねの弾性による単位付き力積は
+\begin{align}
+   & \int_{0}^{T/2} -ky \cdot (-1) dt
+  + \int_{T/2}^{T} -ky \cdot (1) dt
+  \\
+   & = -k \left\{
+  \int_{0}^{T/2} -y dt + \int_{T/2}^{T} y dt
+  \right\}
+  \\
+   &
+  \begin{aligned}
+    = -k \Bigg\{
+     & - \int_{0}^{T/2} \left(
+    -\frac{mg}{k} + \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}\cos \left( \omega t + A \right)
+    \right)
+    \\
+     & + \int_{T/2}^{T} \left(
+    -\frac{mg}{k} + \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}\cos \left( \omega t + A \right)
+    \right) \Bigg\}
+  \end{aligned}
+  \\
+   & \begin{aligned}
+       = -k \Bigg\{
+        & - \left[
+         -\frac{mg}{k}t + \frac{1}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \sin (\omega t + A)
+         \right]_0^{T/2}
+       \\
+        & + \left[
+         -\frac{mg}{k}t + \frac{1}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \sin (\omega t + A)
+         \right]_{T/2}^T
+       \Bigg\}
+     \end{aligned}
+  \\
+   & \begin{aligned}
+       = -k \Bigg\{
+        & - \left[
+         -\frac{mg}{k}\frac{T}{2} + \frac{1}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} (\sin(\frac{\omega T}{2} + A) - \sin(A))
+         \right]
+       \\
+        & + \left[
+         -\frac{mg}{k}\frac{T}{2} + \frac{1}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} (\sin(\omega T + A) - \sin(\frac{\omega T}{2} + A))
+         \right]
+       \Bigg\}
+     \end{aligned}
+  \\
+   & \left( \because \cos (\frac{\omega T}{2} + A) = -1, \ \sin (\frac{\omega T}{2} + A) = 0 \right)
+  \\
+   & = -k \frac{1}{\omega} \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} \left(\sin A + \sin (\omega T + A)\right)
+  \\
+   & \left(
+  \begin{aligned}
+      \because \sin A + \sin (\omega T + A) =
+       & \frac{\frac{gt_h}{\omega}}{\sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2}}
+      \\
+       & + \left( - \frac{gt_h}{ \omega \sqrt{\left(\frac{gt_h}{\omega}\right)^2 + \left(\frac{mg}{k}\right)^2} } \right)
+      = 0
+    \end{aligned}
+  \right)
+  \\
+   & = 0
+\end{align}
+
+\section{Case: 外力が与えられたとき}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = 0.6\textwidth]{spring_given_force.png}
+  \caption{}
+  \label{spring_given_force.png}
+\end{figure}
+\subsection{準備}
+\subsubsection{$-\frac{\pi}{\omega} < t < 0$}
+\begin{align}
+  m\ddot{y}
+   & = - mg - ky - f_0
+  \\
+   & = -k\left( y + \frac{mg+f_0}{k} \right)
+\end{align}
+\begin{align}
+  y = - \frac{mg+f_0}{k} + A \sin \omega t + B \cos \omega t
+\end{align}
+$t=0$で$y=-2\frac{mg+f_0}{k}, \dot{y} = 0$より
+\begin{align}
+  y
+   & = - \frac{mg+f_0}{k} - \frac{mg+f_0}{k} \cos \omega t
+  \\
+   & = -\frac{mg+f_0}{k} \left( 1 + \cos \omega t \right)
+\end{align}
+
+\subsubsection{$0 < t$}
+\begin{align}
+  m\ddot{y}
+   & = - mg - ky + f_1
+  \\
+   & = -k\left( y + \frac{mg - f_1}{k} \right)
+\end{align}
+\begin{align}
+  y = - \frac{mg - f_1}{k} + A \sin \omega t + B \cos \omega t
+\end{align}
+$t=0$で$y=-2\frac{mg + f_0}{k}, \dot{y} = 0$より
+\begin{align}
+   & -2\frac{mg + f_0}{k} = -\frac{mg - f_1}{k} + B
+  \\
+   & \Rightarrow
+  B = -\frac{mg + 2f_0 + f_1}{k}
+\end{align}
+\begin{align}
+  \therefore y
+   & = - \frac{mg - f_1}{k} - \frac{mg + 2f_0 + f_1}{k} \cos \omega t
+\end{align}
+
+離ばねの定義は今までと同様に
+\begin{align}
+  ky=0 \Rightarrow y=0
+\end{align}
+だから、時刻$t=T$で離ばねする場合
+\begin{align}
+  0 & = -\frac{mg - f_1}{k} - \frac{mg + 2f_0 + f_1}{k} \cos \omega T
+  \\
+  \Leftrightarrow
+  \cos \omega T
+    & = -\frac{mg - f_1}{mg + 2f_0 + f_1}
+\end{align}
+また、$T<\frac{\pi}{\omega}$より$\sin \omega T > 0$だから
+\begin{align}
+  \sin \omega T
+   & = \sqrt{1 - \cos^2 \omega T}
+  \\
+   & = \sqrt{ \frac{(mg + 2f_0 + f_1)^2 - (mg - f_1)^2}{(mg + 2f_0 + f_1)^2}}
+  \\
+   & = \sqrt{
+  \frac{m^2g^2 + 4mgf_0 + 2mgf_1 + 4f_0f_1 + 4{f_0}^2 + {f_1}^2 - m^2g^2 + 2mgf_1 - {f_1}^2}
+  {(mg + 2f_0 + f_1)^2}
+  }
+  \\
+   & = \sqrt{
+    \frac{4mgf_0 + 4mgf_1 + 4f_0f_1 + 4{f_0}^2}{(mg + 2f_0 + f_1)^2}
+  }
+  \\
+   & = \frac{2\sqrt{mgf_0 + mgf_1 + f_0f_1 + {f_0}^2}}{mg + 2f_0 + f_1}
+  \\
+   & = \frac{2\sqrt{(mg + f_0)(f_1+f_0)}}{mg + 2f_0 + f_1}
+\end{align}
+
+また、離ばね時の運動量は離ばね時の速度$v_f$を用いてエネルギー保存則より
+\begin{align}
+  \frac{1}{2}m{v_f}^2
+   & = mg\left(-2\frac{mg+f_0}{k}\right)
+  + f_1\cdot 2\frac{mg+f_0}{k} + \frac{1}{2}k\left( \frac{4(mg+f_0)^2}{k^2} \right)
+  \\
+   & = \frac{mg+f_0}{k}\left( -2mg + 2f_1 + 2mg + 2f_0 \right)
+  \\
+   & = \frac{mg+f_0}{k}\left( 2f_1 + 2f_0 \right)
+  \\
+  v_f
+   & = 2\sqrt{\frac{(mg + f_0) (f_1 + f_0)}{mk}}
+  \\
+   & = \frac{2}{\omega}\omega \sqrt{\frac{(mg + f_0) (f_1 + f_0)}{mk}}
+  \\
+   & = \frac{2}{\omega} \sqrt{\frac{k}{m}} \sqrt{\frac{(mg + f_0) (f_1 + f_0)}{mk}}
+  \\
+   & = \frac{2}{m\omega}\sqrt{(mg + f_0)(f_1 + f_0)}
+  \\ \therefore
+  mv_f
+   & = \frac{2}{\omega} \sqrt{(mg + f_0)(f_1 + f_0)}
+\end{align}
+
+\subsection{貢献}
+
+\subsubsection{力積}
+合計が
+\begin{align}
+  mv_f
+   & = \frac{2}{\omega} \sqrt{(mg + f_0)(f_1 + f_0)}
+\end{align}
+に等しくなるはず。
+
+重力による力積は
+\begin{align}
+  \int_{-\frac{\pi}{\omega}}^{T} -mgdt = -mgT - mg\frac{\pi}{\omega}
+\end{align}
+
+外力による力積は
+\begin{align}
+  \int_{-\frac{\pi}{\omega}}^{0} -f_0 dt
+  + \int_0^T f_1 dt
+  &= -\frac{\pi}{\omega}f_0 + f_1 T
+\end{align}
+
+ばねの弾性による力積は
+\begin{align}
+  & \int_{-\frac{\pi}{\omega}}^0 -ky dt
+  + \int_0^T -ky dt
+  \\
+  &= \int_{-\frac{\pi}{\omega}}^0 (mg + f_0)( 1 + \cos \omega t ) dt
+  + \int_0^T \Big\{ (mg-f_1) + (mg + 2f_0 + f_1)\cos \omega t\Big\} dt
+  \\
+  &= (mg + f_0)\left[ t + \frac{1}{\omega} \sin \omega t\right]_{\frac{\pi}{\omega}}^0
+  + (mg - f_1)\left[ t \right]_0^T
+  + (mg + 2f_0 + f_1) \frac{1}{\omega} \left[ \sin \omega t \right]_0^T
+  \\
+  &= mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+  + mgT - f_1 T
+  + \frac{mg + 2f_0 + f_1}{\omega} \sin \omega T
+  \\
+  &= mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+  + mgT - f_1 T
+  + \frac{mg + 2f_0 + f_1}{\omega} \frac{2\sqrt{(mg + f_0)(f_1+f_0)}}{mg + 2f_0 + f_1}
+  \\
+  &= mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+  + mgT - f_1 T
+  + \frac{2}{\omega} \sqrt{(mg + f_0)(f_1+f_0)}
+\end{align}
+
+合計もちゃんと一致した。
 
 \end{document}
