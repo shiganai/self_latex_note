@@ -11,10 +11,21 @@
 \usepackage{wrapfig}
 \usepackage{cases}
 \usepackage{dcolumn}
+\usepackage{subcaption}
 \makeatletter
 \newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
 \newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
 \makeatother
+
+% add hyperlinks
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  breaklinks=true, 
+}
 
 \usepackage{listings,jvlisting}
 \lstset{
@@ -43,6 +54,39 @@ lineskip=-0.5ex
 \date{\today}
 \maketitle
 
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{ccc}
+    \begin{minipage}[t]{0.33\textwidth}
+      \begin{subcaptionblock}{1\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{simple_string.png}
+        \caption{Sec. \ref{section:simple_spring_nonh}}
+        \label{simple_string.png}
+      \end{subcaptionblock}
+    \end{minipage} &
+    \begin{minipage}[t]{0.33\textwidth}
+      \begin{subcaptionblock}{1\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{fall_and_spring.png}
+        \caption{Sec. \ref{section:simple_string_h}}
+        \label{fall_and_spring.png}
+      \end{subcaptionblock}
+    \end{minipage} &
+    \begin{minipage}[t]{0.33\textwidth}
+      \begin{subcaptionblock}{1\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{spring_given_force.png}
+        \caption{Sec. \ref{section:external_forcce}}
+        \label{spring_given_force.png}
+      \end{subcaptionblock}
+    \end{minipage}
+  \end{tabular}
+  \caption{
+    状況説明
+  }
+\end{figure}
+
 現状考えている評価方法は
 \begin{enumerate}
   \item 力積
@@ -50,7 +94,129 @@ lineskip=-0.5ex
   \item $\int\sigma (vy_G)ay_G dt$ で表される単位付き力積
 \end{enumerate}
 
+\begin{table}[h]
+  \centering
+  \caption{力積}
+  \begin{tabular}{c|c|c|c}
+    \hline \hline
+    \multicolumn{4}{l}{力積}
+    \\ \hline \hline
+     & 重力                                             & ばねの弾性 & 外力
+    \\ \hline
+    Sec. \ref{section:simple_spring_nonh}
+     & $-mg \frac{2\pi}{\omega}$
+     & $mg \frac{2\pi}{\omega}$
+     & -
+    \\
+    Sec. \ref{section:simple_string_h}
+     & $-mg \left(T + t_h\right)$
+     & $mgT + 2mgt_h$
+     & -
+    \\
+    Sec. \ref{section:external_forcce}
+     & $-mgT - mg\frac{\pi}{\omega}$
+     & $-\frac{\pi}{\omega}f_0 + f_1 T$
+     & $mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+      + mgT - f_1 T
+      + \frac{2}{\omega} \sqrt{(mg + f_0)(f_1+f_0)}$
+    \\
+    \hline \hline
+    \multicolumn{4}{l}{仕事量}
+    \\ \hline \hline
+     & 重力                                             & ばねの弾性 & 外力
+    \\ \hline
+    Sec. \ref{section:simple_spring_nonh}
+     & $0$
+     & $0$
+     & -
+    \\
+    Sec. \ref{section:simple_string_h}
+     & $mgh$
+     & $0$
+     & -
+    \\
+    Sec. \ref{section:external_forcce}
+     & $0$
+     & $0$
+     & $\frac{2(mg+f_0)}{k}(f_0 + f_1)$
+    \\
+    \hline \hline
+    \multicolumn{4}{l}{単位付き力積}
+    \\ \hline \hline
+     & 重力                                             & ばねの弾性 & 外力
+    \\ \hline
+    Sec. \ref{section:simple_spring_nonh}
+     & $-mg \frac{2\pi}{\omega}$
+     & $mg \frac{2\pi}{\omega}$
+     & -
+    \\
+    Sec. \ref{section:simple_string_h}
+     & $-mg \left(T + t_h\right)$
+     & $mgT + 2mgt_h$
+     & -
+    \\
+    Sec. \ref{section:external_forcce}
+     & $-mgT - mg\frac{\pi}{\omega}$
+     & $-\frac{\pi}{\omega}f_0 + f_1 T$
+     & $f_0 \frac{\pi}{\omega} + f_1 T$
+    \\
+  \end{tabular}
+  \label{}
+\end{table}
+
+% \begin{table}[h]
+%   \centering
+%   \caption{仕事量}
+%   \begin{tabular}{c|c|c|c}
+%     & 重力 & ばねの弾性 & 外力
+%     \\ \hline
+%     Sec. \ref{section:simple_spring_nonh}
+%     & $0$
+%     & $0$
+%     &-
+%     \\
+%     Sec. \ref{section:simple_string_h}
+%     & $mgh$
+%     & $0$
+%     &-
+%     \\
+%     Sec. \ref{section:external_forcce}
+%     & $0$
+%     & $0$
+%     & $\frac{2(mg+f_0)}{k}(f_0 + f_1)$
+%     \\
+%   \end{tabular}
+%   \label{}
+% \end{table}
+
+% \begin{table}[h]
+%   \centering
+%   \caption{単位付き力積}
+%   \begin{tabular}{c|c|c|c}
+%     & 重力 & ばねの弾性 & 外力
+%     \\ \hline
+%     Sec. \ref{section:simple_spring_nonh}
+%     & $-mg \frac{2\pi}{\omega}$
+%     & $mg \frac{2\pi}{\omega}$
+%     &-
+%     \\
+%     Sec. \ref{section:simple_string_h}
+%     & $-mg \left(T + t_h\right)$
+%     & $mgT + 2mgt_h$
+%     &-
+%     \\
+%     Sec. \ref{section:external_forcce}
+%     & $-mgT - mg\frac{\pi}{\omega}$
+%     & $-\frac{\pi}{\omega}f_0 + f_1 T$
+%     & $f_0 \frac{\pi}{\omega} + f_1 T$
+%     \\
+%   \end{tabular}
+%   \label{}
+% \end{table}
+
+\clearpage
 \section{Case: 単純なばね(落下なし)}
+\label{section:simple_spring_nonh}
 
 \begin{figure}[h]
   \centering
@@ -155,6 +321,7 @@ $\frac{2\pi}{\omega}$
 
 
 \section{Case: 単純なばね(落下あり)}
+\label{section:simple_string_h}
 
 \begin{figure}[h]
   \centering
@@ -351,6 +518,8 @@ $vy = -gt_h$
 \end{align}
 
 \section{Case: 外力が与えられたとき}
+\label{section:external_forcce}
+
 \begin{figure}[h]
   \centering
   \includegraphics[width = 0.6\textwidth]{spring_given_force.png}
@@ -473,34 +642,92 @@ $t=0$で$y=-2\frac{mg + f_0}{k}, \dot{y} = 0$より
 \begin{align}
   \int_{-\frac{\pi}{\omega}}^{0} -f_0 dt
   + \int_0^T f_1 dt
-  &= -\frac{\pi}{\omega}f_0 + f_1 T
+   & = -\frac{\pi}{\omega}f_0 + f_1 T
 \end{align}
 
 ばねの弾性による力積は
 \begin{align}
-  & \int_{-\frac{\pi}{\omega}}^0 -ky dt
+   & \int_{-\frac{\pi}{\omega}}^0 -ky dt
   + \int_0^T -ky dt
   \\
-  &= \int_{-\frac{\pi}{\omega}}^0 (mg + f_0)( 1 + \cos \omega t ) dt
+   & = \int_{-\frac{\pi}{\omega}}^0 (mg + f_0)( 1 + \cos \omega t ) dt
   + \int_0^T \Big\{ (mg-f_1) + (mg + 2f_0 + f_1)\cos \omega t\Big\} dt
   \\
-  &= (mg + f_0)\left[ t + \frac{1}{\omega} \sin \omega t\right]_{\frac{\pi}{\omega}}^0
+   & = (mg + f_0)\left[ t + \frac{1}{\omega} \sin \omega t\right]_{\frac{\pi}{\omega}}^0
   + (mg - f_1)\left[ t \right]_0^T
   + (mg + 2f_0 + f_1) \frac{1}{\omega} \left[ \sin \omega t \right]_0^T
   \\
-  &= mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+   & = mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
   + mgT - f_1 T
   + \frac{mg + 2f_0 + f_1}{\omega} \sin \omega T
   \\
-  &= mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+   & = mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
   + mgT - f_1 T
   + \frac{mg + 2f_0 + f_1}{\omega} \frac{2\sqrt{(mg + f_0)(f_1+f_0)}}{mg + 2f_0 + f_1}
   \\
-  &= mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+   & = mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
   + mgT - f_1 T
   + \frac{2}{\omega} \sqrt{(mg + f_0)(f_1+f_0)}
 \end{align}
 
 合計もちゃんと一致した。
 
-\end{document}
+\subsubsection{仕事量}
+重力による仕事量は
+\begin{align}
+  \int_{-\frac{\pi}{\omega}}^{T} -mg\cdot \dot{y} dt
+   & = \int_{t=-\frac{\pi}{\omega}}^{t=T} -mgdy
+  \\
+   & =-mg\left[ y \right]_{t=-\frac{\pi}{\omega}}^{t=T}
+  \\
+   & = -mg\left[ 0 - 0 \right] = 0
+\end{align}
+
+外力による仕事量は
+\begin{align}
+   & \int_{-\frac{\pi}{\omega}}^{0} -f_0 \cdot \dot{y} dt
+  + \int_{0}^{T} f_1 \cdot \dot{y} dt
+  \\
+   & = \int_{t=-\frac{\pi}{\omega}}^{t=0} -f_0 dy
+  + \int_{t=0}^{t=T} f_1 dy
+  \\
+   & = -f_0 \left[ y \right]_{t=-\frac{\pi}{\omega}}^{t=0}
+  + f_1 \left[ y \right]_{t=0}^{t=T}
+  \\
+   & = -f_0 \left[ -\frac{2(mg + f_0)}{k} - 0 \right]
+  + f_1 \left[ 0 - \left( -\frac{2(mg + f_0)}{k} \right) \right]
+  \\
+   & =\frac{2(mg + f_0)}{k}(f_0 + f_1)
+  \\
+   & \Bigl( = \frac{1}{2}m{v_f}^2 \Bigr)
+\end{align}
+
+ばねの弾性による仕事量は
+\begin{align}
+  \int_{-\frac{\pi}{\omega}}^{T} -ky \cdot \dot{y} dt
+   & = \int_{t=-\frac{\pi}{\omega}}^{t=T} -ky dy
+  \\
+   & = -\frac{1}{2}k \left[ y^2 \right]_{t=-\frac{\pi}{\omega}}^{t=T}
+  \\
+   & = -\frac{1}{2}k \left[ 0 - 0 \right] = 0
+\end{align}
+
+\subsubsection{$\int\sigma (vy_G)ay_G dt$ で表される単位付き力積}
+重力による単位付き力積は、重力の方向が変わらないので力積と等しくなる。
+省略。
+
+ばねの弾性による単位付き力積は、ばねの弾性力の方向が常に変わらないので力積に等しくなる。
+省略。
+
+外力による単位付き力積は
+\begin{align}
+   & \int_{-\frac{\pi}{\omega}}^{0} -f_0 \cdot (-1) dt
+  + \int_{0}^{T} f_1 \cdot (1) dt
+  \\
+   & = f_0 \left[ t \right]_{-\frac{\pi}{\omega}}^{0}
+  + f_1 \left[ t \right]_{0}^{T}
+  \\
+   & = f_0 \frac{\pi}{\omega} + f_1 T
+\end{align}
+
+\end{document}F
