@@ -115,10 +115,10 @@ lineskip=-0.5ex
     \\
     Sec. \ref{section:external_forcce}
      & $-mgT - mg\frac{\pi}{\omega}$
-     & $-\frac{\pi}{\omega}f_0 + f_1 T$
      & $mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
       + mgT - f_1 T
       + \frac{2}{\omega} \sqrt{(mg + f_0)(f_1+f_0)}$
+     & $-\frac{\pi}{\omega}f_0 + f_1 T$
     \\
     \hline \hline
     \multicolumn{4}{l}{仕事量}
@@ -146,18 +146,20 @@ lineskip=-0.5ex
      & 重力                                             & ばねの弾性 & 外力
     \\ \hline
     Sec. \ref{section:simple_spring_nonh}
-     & $-mg \frac{2\pi}{\omega}$
-     & $mg \frac{2\pi}{\omega}$
+     & $0$
+     & $0$
      & -
     \\
     Sec. \ref{section:simple_string_h}
-     & $-mg \left(T + t_h\right)$
-     & $mgT + 2mgt_h$
+     & $mgt_h$
+     & $0$
      & -
     \\
     Sec. \ref{section:external_forcce}
-     & $-mgT - mg\frac{\pi}{\omega}$
-     & $-\frac{\pi}{\omega}f_0 + f_1 T$
+     & $mg\left( \frac{\pi}{\omega} - T \right)$
+     & $mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+      - mgT + f_1 T
+      - \frac{2}{\omega} \sqrt{(mg + f_0)(f_1+f_0)}$
      & $f_0 \frac{\pi}{\omega} + f_1 T$
     \\
   \end{tabular}
@@ -461,9 +463,9 @@ $\dot{y} = 0$
 \begin{align}
   \int_{-t_h}^{T/2} -mg \cdot (-1) dt
   + \int_{T/2}^{T} -mg \cdot (1) dt
-   & = \int_{t=-t_h}^{t=T} -mgdy
+   & = mg\left[ \frac{T}{2} - (-t_h) \right] - mg \left[ T - \frac{T}{2} \right]
   \\
-   & = -mg(0 - h) = mgh
+   & = mg\frac{T}{2} + mgt_h - mg\frac{T}{2} = mgt_h
 \end{align}
 
 ばねの弾性による単位付き力積は
@@ -724,11 +726,38 @@ $t=0$で$y=-2\frac{mg + f_0}{k}, \dot{y} = 0$より
 \end{align}
 
 \subsubsection{$\int\sigma (vy_G)ay_G dt$ で表される単位付き力積}
-重力による単位付き力積は、重力の方向が変わらないので力積と等しくなる。
-省略。
+重力による単位付き力積は
+\begin{align}
+   & \int_{-\frac{\pi}{\omega}}^{0} -mg \cdot (-1) dt
+  + \int_{0}^{T} -mg \cdot (1) dt
+  \\
+   & = mg\frac{\pi}{\omega} - mgT = mg\left( \frac{\pi}{\omega} - T\right)
+\end{align}
 
-ばねの弾性による単位付き力積は、ばねの弾性力の方向が常に変わらないので力積に等しくなる。
-省略。
+ばねの弾性による単位付き力積は
+\begin{align}
+   & \int_{-\frac{\pi}{\omega}}^0 -ky \cdot (-1) dt
+  + \int_0^T -ky \cdot (1) dt
+  \\
+   & = \int_{-\frac{\pi}{\omega}}^0 (mg + f_0)( 1 + \cos \omega t ) dt
+  - \int_0^T \Big\{ (mg-f_1) + (mg + 2f_0 + f_1)\cos \omega t\Big\} dt
+  \\
+   & = (mg + f_0)\left[ t + \frac{1}{\omega} \sin \omega t\right]_{\frac{\pi}{\omega}}^0
+  - (mg - f_1)\left[ t \right]_0^T
+  - (mg + 2f_0 + f_1) \frac{1}{\omega} \left[ \sin \omega t \right]_0^T
+  \\
+   & = mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+  - mgT + f_1 T
+  - \frac{mg + 2f_0 + f_1}{\omega} \sin \omega T
+  \\
+   & = mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+  - mgT + f_1 T
+  - \frac{mg + 2f_0 + f_1}{\omega} \frac{2\sqrt{(mg + f_0)(f_1+f_0)}}{mg + 2f_0 + f_1}
+  \\
+   & = mg\frac{\pi}{\omega} + \frac{\pi}{\omega} f_0
+  - mgT + f_1 T
+  - \frac{2}{\omega} \sqrt{(mg + f_0)(f_1+f_0)}
+\end{align}
 
 外力による単位付き力積は
 \begin{align}
