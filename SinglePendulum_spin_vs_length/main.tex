@@ -36,13 +36,13 @@
 
 \begin{figure}[h]
   \begin{tabular}{cc}
-    \begin{minipage}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.45\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{config.png}
       \caption{設定}
       \label{config.png}
     \end{minipage} &
-    \begin{minipage}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.45\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{length_after_takeoff.png}
       \caption{離軸後の慣性モーメント}
@@ -55,9 +55,12 @@
 ただし、回転軸から離れた後は図\ref{length_after_takeoff.png}のように、
 離軸前の振り子の長さ($l^L, l^S$)によらず、$l^{Air}$に変化する。
 これは平行棒の後方宙返りにおいて、離手後に同じ姿勢をとる状況を再現するためである。
-そしてこの文書は
-"単振り子は長いほうが高い回転数を実現する"
-ことを証明する文書である。
+
+今回は、質量が一定に保たれ、密度が一様な剛体振り子を考えるが、
+力学的エネルギーを長さ$l$によらず一定に保つために、
+水平$\theta = 0$から振り出すことを考える。
+
+\section{"単振り子は長いほうが高い回転数を実現する"の証明}
 
 単振り子の良い点は、時間パラメータ$t$に対して解析的な解を求めなくても、
 角度パラメータ$\theta$に対して簡単に解析的な解が求められることである。
@@ -65,10 +68,7 @@
 簡単に立てられるエネルギー保存則に含まれる変数が$\theta$とその微分である$\omega$
 だけであることによる。
 
-そして今回は、質量が一定に保たれ、密度が一様な剛体振り子を考えるが、
-力学的エネルギーを長さ$l$によらず一定に保つために、
-水平$\theta = 0$から振り出すことを考える。
-するとエネルギーの保存則より
+エネルギーの保存則より
 \begin{align}
   0 
   &= \frac{1}{2} m \Big\{ (l\omega\sin\theta)^2 + (-l\omega\cos\theta)^2  \Big\}
@@ -81,7 +81,10 @@
 \end{align}
 これにより
 \begin{align}
-  \omega^2 = \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta
+  \omega^2 &= \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta,
+  \\
+  \therefore
+  \omega &= \sqrt{ \frac{3g}{2l}\sin\theta }
 \end{align}
 が求まる。
 空中での回転速度を$\Omega$とすると
@@ -128,7 +131,7 @@ $h\leq0$が成り立つ。
   \\
   &= \frac{1}{2}ml^2 \omega^2 \cos^2 \theta + mg (-l \sin \theta)
   \\
-  & \ \ \left( \because \omega^2 = \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta \right) \notag
+  & \ \ \left( \because \omega^2 = \frac{3g}{2l}\sin\theta \right) \notag
   \\
   &= \frac{1}{2}ml^2 \cos^2 \theta \cdot \frac{3g}{2l}\sin\theta + mg (-l \sin \theta)
   \\
@@ -146,10 +149,11 @@ $h\leq0$が成り立つ。
 \end{align}
 よって長さ$l$と離軸角度に関して以下の式が得られる。
 \begin{align}
-  & mgh = \frac{1}{4}mgl \sin\theta (3\sin^2\theta + 1)
+  mgh &= -\frac{1}{4}mgl \sin\theta (3\sin^2\theta + 1)
+  \label{eq:energy_vertical:conclusion}
   \\
   \Leftrightarrow
-  & l = \frac{4(-h)}{\sin\theta (3\sin^2\theta + 1)} \ \ \ \ \Big( > 0, \ \ \because -h > 0, \sin\theta > 0 \Big)
+  l &= \frac{4(-h)}{\sin\theta (3\sin^2\theta + 1)} \ \ \ \ \Big( > 0, \ \ \because -h > 0, \sin\theta > 0 \Big)
   \label{eq:l_vs_sin}
 \end{align}
 
