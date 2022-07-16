@@ -36,13 +36,13 @@
 
 \begin{figure}[h]
   \begin{tabular}{cc}
-    \begin{minipage}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.45\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{config.png}
       \caption{設定}
       \label{config.png}
     \end{minipage} &
-    \begin{minipage}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.45\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{length_after_takeoff.png}
       \caption{離軸後の慣性モーメント}
@@ -55,9 +55,12 @@
 ただし、回転軸から離れた後は図\ref{length_after_takeoff.png}のように、
 離軸前の振り子の長さ($l^L, l^S$)によらず、$l^{Air}$に変化する。
 これは平行棒の後方宙返りにおいて、離手後に同じ姿勢をとる状況を再現するためである。
-そしてこの文書は
-"単振り子は長いほうが高い回転数を実現する"
-ことを証明する文書である。
+
+今回は、質量が一定に保たれ、密度が一様な剛体振り子を考えるが、
+力学的エネルギーを長さ$l$によらず一定に保つために、
+水平$\theta = 0$から振り出すことを考える。
+
+\section{"単振り子は長いほうが高い回転数を実現する"の証明}
 
 単振り子の良い点は、時間パラメータ$t$に対して解析的な解を求めなくても、
 角度パラメータ$\theta$に対して簡単に解析的な解が求められることである。
@@ -65,10 +68,7 @@
 簡単に立てられるエネルギー保存則に含まれる変数が$\theta$とその微分である$\omega$
 だけであることによる。
 
-そして今回は、質量が一定に保たれ、密度が一様な剛体振り子を考えるが、
-力学的エネルギーを長さ$l$によらず一定に保つために、
-水平$\theta = 0$から振り出すことを考える。
-するとエネルギーの保存則より
+エネルギーの保存則より
 \begin{align}
   0 
   &= \frac{1}{2} m \Big\{ (l\omega\sin\theta)^2 + (-l\omega\cos\theta)^2  \Big\}
@@ -81,7 +81,10 @@
 \end{align}
 これにより
 \begin{align}
-  \omega^2 = \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta
+  \omega^2 &= \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta,
+  \\
+  \therefore
+  \omega &= \sqrt{ \frac{3g}{2l}\sin\theta }
 \end{align}
 が求まる。
 空中での回転速度を$\Omega$とすると
@@ -128,7 +131,7 @@ $h\leq0$が成り立つ。
   \\
   &= \frac{1}{2}ml^2 \omega^2 \cos^2 \theta + mg (-l \sin \theta)
   \\
-  & \ \ \left( \because \omega^2 = \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta \right) \notag
+  & \ \ \left( \because \omega^2 = \frac{3g}{2l}\sin\theta \right) \notag
   \\
   &= \frac{1}{2}ml^2 \cos^2 \theta \cdot \frac{3g}{2l}\sin\theta + mg (-l \sin \theta)
   \\
@@ -146,10 +149,11 @@ $h\leq0$が成り立つ。
 \end{align}
 よって長さ$l$と離軸角度に関して以下の式が得られる。
 \begin{align}
-  & mgh = \frac{1}{4}mgl \sin\theta (3\sin^2\theta + 1)
+  mgh &= -\frac{1}{4}mgl \sin\theta (3\sin^2\theta + 1)
+  \label{eq:energy_vertical:conclusion}
   \\
   \Leftrightarrow
-  & l = \frac{4(-h)}{\sin\theta (3\sin^2\theta + 1)} \ \ \ \ \Big( > 0, \ \ \because -h > 0, \sin\theta > 0 \Big)
+  l &= \frac{4(-h)}{\sin\theta (3\sin^2\theta + 1)} \ \ \ \ \Big( > 0, \ \ \because -h > 0, \sin\theta > 0 \Big)
   \label{eq:l_vs_sin}
 \end{align}
 
@@ -308,16 +312,78 @@ $\Omega$は式\ref{eq:Omega}により
   \label{result.png}
 \end{figure}
 
-ちなみに、今までの考察によって
-各長さに対して最高回転数を与える離軸時の角度は分からない。
-解析的にもちろん求められるが、
-どの時点を着地点にするかなどによって変わるので、
+\section{各長さに対して、最高回転数を実現する離軸時の特徴}
+
+今までの考察によって
+各長さに対して最高回転数を与える離軸時の角度は分からないので、
+このセクションで考える。
+
+着地点の高さを$-h_0 (h_0>0)$とする。
+この$h_0$は落差ともとれる。
+離軸後の最高高度$h$は式\ref{eq:energy_vertical:conclusion}により
+\begin{align}
+  h = -\frac{1}{4}l\sin\theta (3\sin^2\theta+1)
+\end{align}
+で表される。
+これにより、最高高度到達後から着地点までにかかる落下時間$t_{down}$は
+\begin{align}
+  \frac{1}{2}g{t_{down}}^2
+  &= h - (-h_0)
+  \\
+  t_{down}
+  &= \sqrt{ \frac{2}{g} (h + h_0)}
+  = \sqrt{ \frac{2}{g} \left( -\frac{1}{4}l\sin\theta (3\sin^2\theta+1) + h_0 \right) }
+  \\
+  & = \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}l\sin\theta (3\sin^2\theta+1) \right) }
+\end{align}
+離軸後に最高高度に達するまでの時間$t_{up}$は
+\begin{align}
+  t_{up} 
+  &= \frac{v_y}{g} = \frac{l\omega(-\cos\theta)}{g}
+  \\
+  &= \frac{l(-\cos\theta)}{g} \sqrt{ \frac{3g}{2l} \sin\theta }
+  \\
+  &= \sqrt{ \frac{l^2(-\cos\theta)^2}{g^2} \frac{3g}{2l} \sin\theta }
+  \\
+  &= \sqrt{ \frac{3}{2g} l\sin\theta (1-\sin^2\theta) }
+\end{align}
+で表される。
+よって滞空時間$T_{air}$は
+\begin{align}
+  T_{air} 
+  &= t_{down} + t_{up}
+  \\
+  &= \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}l\sin\theta (3\sin^2\theta+1) \right) }
+  + \sqrt{ \frac{3}{2g} l\sin\theta (1-\sin^2\theta) }
+\end{align}
+
+また、空中での回転速度$\Omega$は式\label{eq:Omega}によってすでに表されているから、
+回転数$N_r$は
+\begin{align}
+  N_r 
+  &= \theta + T_{air} \cdot \Omega
+  \\
+  &= \theta + 
+  \left( \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}l\sin\theta (3\sin^2\theta+1) \right) }
+    + \sqrt{ \frac{3}{2g} l\sin\theta (1-\sin^2\theta) } 
+  \right)
+  \cdot
+  \frac{1}{I} \sqrt{ \frac{m^2 g}{6} l^3 \sin\theta }
+  \label{eq:spin_number_conclusion}
+\end{align}
+と長さ$l$と離軸時の角度$\theta$をパラメータとして
+解析的に求められる。
+
+しかし、長さ$l$が与えられたとき、
+回転数が最大になる離軸時の角度$\theta$を
+この式から解析的に決定することは
+容易ではない。
+
+なので
 シミュレーション値だけを図\ref{Tair_Omega_at_maxspin.png}で紹介する。
 長さがある程度長い部分に関して滞空時間があまり増大せず、
-回転速度が大きくなる様子は
-平行棒モデルでも観測された
-(図\ref{Tari_Omega_PB.png})
-。
+回転速度が大きくなる様子がみられるが、
+この様子は経験的なものゆえ、この様子がどのような条件でみられるかは定かではない。
 
 \begin{figure}[h]
   \centering
@@ -329,6 +395,28 @@ $\Omega$は式\ref{eq:Omega}により
   }
   \label{Tair_Omega_at_maxspin.png}
 \end{figure}
+
+長さが短い部分に関して滞空時間が増大することは
+式\ref{eq:spin_number_conclusion}から
+想像できる。
+最高高度到達以降の時間である$t_{down}$が
+長さ$l$が小さいために離軸時の角度$\theta$によらず、
+落差$h_0$の値によって大体定まり、
+最高高度に到達するまでの時間$t_{up}$
+のみが長さ$l$に対して増加するからである。
+
+この点から考えると、
+長さがある程度長い部分に関して滞空時間があまり増大しないことは
+最高高度到達以降の時間である$t_{down}$の減少分と
+最高高度に到達するまでの時間$t_{up}$の増加分が
+丁度打ち消しあうような関係になっているからと説明できるかもしれない。
+
+ちなみに、
+長さがある程度長い部分に関して滞空時間があまり増大せず、
+回転速度が大きくなる様子は
+平行棒モデルでも観測された
+(図\ref{Tari_Omega_PB.png})
+。
 
 \begin{figure}[h]
   \centering
