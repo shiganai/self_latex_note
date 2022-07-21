@@ -382,6 +382,52 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
 胴体が上肢との位置関係を入れ替えるタイミングが
 上肢の左右への傾きへ大きな影響を及ぼすことが予想され、
 その中でもより上肢を鉛直に保つような動作がパフォーマンスが高くなることが予想される。
+
+\subsection{胴体と上肢の位置関係と回転数}
+これまでの議論により
+\begin{enumerate}
+  \item 胴体と上肢の位置関係により角運動量の増減が決まる
+  
+  胴体が上肢より左側にある時は角運動量が増加し、
+  胴体が上肢より右側にある時は角運動量が減少する。
+  \item 胴体と上肢の位置関係により上肢の角度が決まり、鉛直反力が決まる
+  
+  胴体が上肢より左側にある時は上肢は左に傾き、
+  胴体が上肢より右側にある時は上肢は右に傾く。
+  上肢がより鉛直に保たれるほど鉛直反力が大きくなる。
+\end{enumerate}
+ことが分かった。
+このことから、
+\begin{itemize}
+  \item 胴体が上肢より左側にある状況を保ったほうが角運動量は大きくなりやすいが、
+  上肢が左に傾きすぎて鉛直反力が小さくなってしまう可能性がある。
+\end{itemize}
+と考えられる。
+そして
+「どれほど胴体が上肢より左側にある状況を保ったのか」の指標として
+「胴体と上肢が重なるときの上肢の角度」が適していることが
+シミュレーションから分かっている。
+
+\begin{figure}[h]
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=1\textwidth]{PBmodel_theta_at_match.png}
+      \subcaption{平行棒モデル: vs 振り子としての長さ}
+      \label{PBmodel_theta_at_match.png}
+    \end{minipage} &
+    \begin{minipage}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=1\textwidth]{1seg_circle_model_theta_at_match.png}
+      \subcaption{振り子+剛体単振り子モデル: vs 肩関節にかけるトルクの大きさ}
+      \label{1seg_circle_model_theta_at_match.png}
+    \end{minipage}
+  \end{tabular}
+  \caption{回転数と「胴体と上肢が重なるときの上肢の角度」の関係}
+\end{figure}
+
+
+
 \clearpage
 \section{Appendix}
 \label{sec:appendix}
