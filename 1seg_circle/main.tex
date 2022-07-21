@@ -296,6 +296,69 @@ $a_{arm}$の符号は右辺で決まることになる。
   \end{figure}
 \end{enumerate}
 
+\subsection{胴体と上肢の位置関係と角運動量}
+式\ref{eq:PB:L_start}~\ref{eq:PB:IG_start}から
+$F_S$を決定する。
+式\ref{eq:PB:I_start},\ref{eq:PB:IG_start}により
+\begin{align}
+  & \frac{I}{I_G}F_S\sin\theta_S \cdot L = -Mg\cos\Theta_S \cdot L - Ma_{arm}\cos\theta_S \cdot L
+  \\
+  & \left( \because L > 0 \right)
+  \\
+  \Leftrightarrow
+  & 0= -Mg\cos\Theta_S - Ma_{arm}\cos\theta_S - \frac{I}{I_G}F_S\sin\theta_S
+  \label{eq:PB:FS_end}
+\end{align}
+式\ref{eq:PB:L_start},\ref{eq:PB:FS_end}を変形して
+\begin{align}
+  ML\omega^2 \cos\theta_S &= Mg\sin\Theta_S\cos\theta_S &+& Ma\sin\theta_S\cos\theta_S &- &F_S\cos^2\theta_S
+  \\
+  0 &= -Mg\cos\Theta_S \sin\theta_S 
+  &-& Ma_{arm}\cos\theta_S \sin\theta_S 
+  &- &\frac{I}{I_G}F_S\sin\theta_S \sin\theta_S
+\end{align}
+この2式により
+\begin{align}
+  ML\omega^2 \cos\theta_S 
+  &= Mg\left( \sin\Theta_S \cos\theta_S - \cos\Theta_S \sin\theta_S\right)
+  - F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
+\end{align}
+\begin{align}
+  \therefore
+  F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
+  &= -ML\omega^2 \cos\theta_S + Mg \sin(\underbrace{\Theta_S - \theta_S}_{=\theta_W+\frac{1}{2}\pi})
+  \label{eq:PB:FS_end}
+\end{align}
+が分かる。
+
+$F_S$の正負は
+式\ref{eq:PB:FS_end}からは簡単に推定されない。
+なぜなら、
+データ的に$F_S$は大体正なのだが(*要データ確認)、
+どちらかの方が十分に大きいという近似は、
+正であることを保証しない。
+大体正であるためには、
+$_ML\omega^2\cos\theta_S < 0$であるうちは
+$Mg\sin(\theta_W + \frac{1}{2}\pi) ( > 0 \because -\frac{1}{2}\pi < \theta_W < \frac{1}{2}\pi )$
+が大きい必要がある。
+
+ここから先は
+$F_S$は大体正であることを前提とする。(だから間違っている可能性がある)
+
+式\ref{eq:PB:IG_start}
+\begin{align}
+  I_G\dot\omega = F_S \sin\theta_S \cdot L
+\end{align}
+により、
+正の$F_S$は$0 < \theta_S < \pi$であるうちは
+角運動量を増加する。
+逆に、正の$F_S$は$\pi < \theta_S < 2\pi$のときは
+角運動量を減少させる。
+つまり、上肢と胴体の角度が重なるときを境に、
+正の$F_S$による角運動量の増減は入れ替わる。
+より長い間$0 < \theta_S < \pi$、
+つまり胴体が上肢より左側にある状態を保ったほうが
+角運動量は増加する。
 
 \clearpage
 \section{Appendix}
