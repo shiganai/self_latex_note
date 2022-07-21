@@ -142,7 +142,7 @@ $\vec{F}_W$と$-\vec{F}_S$は
 肩関節の位置は等速度運動をしないから、
 この座標上で物体の運動を考えるときは慣性力を考慮する必要があり、
 運動方程式は
-慣性力を$-Ma_{arm}$として
+慣性力を$Ma_{arm}$として
 \begin{align}
   ML\omega^2 &= Mg\sin\Theta_S &+& Ma_{arm}\sin\theta_S &- F_S\cos\theta_S
   \label{eq:PB:L_start}
@@ -202,49 +202,21 @@ $\vec{F}_W$と$-\vec{F}_S$は
 $\sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S > 0$であるから、
 $a_{arm}$の符号は右辺で決まることになる。
 
-上肢の加速を表す式\ref{eq:PB:a_arm_end}について
-具体的な状況を考えることで理解を深めよう。
-\begin{enumerate}
-  \item $\omega^2$が小さく、$ML\omega^2$が十分に小さい場合
-  \begin{align}
-    Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
-    \approx - Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)  
-  \end{align}
-  という近似が成り立つから、
-  $-\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)$
-  によって正負が決定する。
-  例えば$\Theta_S = \pi$である状況では
-  \begin{align}
-    -\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)
-    = -\left(-\frac{I_G}{I}\cos\theta_S\right) = \frac{I_G}{I}\cos\theta_S
-  \end{align}
-  であるから、
-  $\cos\theta_S$によって正負が決定される。
-  図\ref{PN_horizontal_positive.png}の状況では
-  $\cos\theta_S>0$であるから、
-  上肢は正の方向に加速する。
-  図\ref{PN_horizontal_negative.png}の状況では
-  $\cos\theta_S<0$であるから、
-  上肢は負の方向に加速する。
-  \begin{figure}[h]
-    \begin{tabular}{cc}
-      \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{PN_horizontal_positive.png}
-        \subcaption{$a_{arm}$が正のケース}
-        \label{PN_horizontal_positive.png}
-      \end{minipage} &
-      \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{PN_horizontal_negative.png}
-        \subcaption{$a_{arm}$が負のケース}
-        \label{PN_horizontal_negative.png}
-      \end{minipage}
-    \end{tabular}
-    \caption{胴体が水平のとき}
-  \end{figure}
+\subsection{胴体と上肢の位置関係と上肢の加速方向}
 
-  \item $\omega^2$が大きく、$Mg$が十分に小さい場合
+上肢の加速を表す式\ref{eq:PB:a_arm_end}について
+具体的な状況
+\begin{enumerate}
+  \item $\omega^2$が大きく、向心力ないし遠心力が十分に大きい場合
+  \item $\omega^2$が小さく、向心力ないし遠心力が十分に小さい場合
+  (しかしこちらのケースは時間が短く、影響力が大きくない。)
+  *要データ確認(シミュレーション中の各項に相当するものの大きさ？)
+\end{enumerate}
+を考えることで理解を深めよう。
+
+
+\begin{enumerate}
+  \item $\omega^2$が大きく、向心力ないし遠心力が十分に大きい場合
   \begin{align}
     Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
     \approx ML\omega^2 \sin\theta_S
@@ -283,9 +255,47 @@ $a_{arm}$の符号は右辺で決まることになる。
     \end{tabular}
     \caption{$\omega^2$が大きく、遠心力が大きいとき}
   \end{figure}
+
+  \item $\omega^2$が小さく、向心力ないし遠心力が十分に小さい場合
+  \begin{align}
+    Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
+    \approx - Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)  
+  \end{align}
+  という近似が成り立つから、
+  $-\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)$
+  によって正負が決定する。
+  例えば$\Theta_S = \pi$である状況では
+  \begin{align}
+    -\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)
+    = -\left(-\frac{I_G}{I}\cos\theta_S\right) = \frac{I_G}{I}\cos\theta_S
+  \end{align}
+  であるから、
+  $\cos\theta_S$によって正負が決定される。
+  図\ref{PN_horizontal_positive.png}の状況では
+  $\cos\theta_S>0$であるから、
+  上肢は正の方向に加速する。
+  図\ref{PN_horizontal_negative.png}の状況では
+  $\cos\theta_S<0$であるから、
+  上肢は負の方向に加速する。
+  \begin{figure}[h]
+    \begin{tabular}{cc}
+      \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{PN_horizontal_positive.png}
+        \subcaption{$a_{arm}$が正のケース}
+        \label{PN_horizontal_positive.png}
+      \end{minipage} &
+      \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{PN_horizontal_negative.png}
+        \subcaption{$a_{arm}$が負のケース}
+        \label{PN_horizontal_negative.png}
+      \end{minipage}
+    \end{tabular}
+    \caption{胴体が水平のとき}
+  \end{figure}
 \end{enumerate}
 
-\subsection{胴体と上肢の位置関係と上肢の加速方向}
 
 \clearpage
 \section{Appendix}
