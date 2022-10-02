@@ -120,6 +120,144 @@ $v^a, L$を決定することができる。
 
 \section{単振り子の衝突}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = 0.6\textwidth]{1seg_collision.png}
+  \caption{単振り子の衝突状況}
+  \label{1seg_collision.png}
+\end{figure}
+
+次に、衝突後の想像が1段階難しくなる、単振り子の衝突を考える。
+何が難しいかというと、端点での衝突によって重心速度が変わることはもちろん、
+回転速度$\omega$も変化することが難しい。
+そして、端点は質量が0だから、衝突の前後で弾性係数から力積を求めることもできない。
+
+先ほどと同様、beforeのb, afterのa を使って、
+衝突前の状態を$v_x^b, v_y^a, \omega^b$,
+衝突後の状態を$v_x^a, v_y^a, \omega^a$
+とする。
+$v_x^a, v_y^a, \omega^a$は全て未知数である。
+
+ニュートンの運動方程式は
+\begin{gather*}
+  \begin{cases}
+    m a_x &= F_x
+    \\
+    m a_y &= F_y
+    \\
+    I\dot{\omega} &= \mathbb{R} \times \mathbb{F}
+  \end{cases}
+\end{gather*}
+と表される。
+ただし$\mathbb{F}$は
+\begin{gather*}
+  \mathbb{F} = \begin{pmatrix}
+    F_x
+    \\
+    F_y
+  \end{pmatrix}
+  = \begin{cases}
+    \begin{pmatrix}
+      0
+      \\
+      0
+    \end{pmatrix} & (t\neq 0)
+    \\
+    \begin{pmatrix}
+      \infty
+      \\
+      \infty
+    \end{pmatrix} & (t = 0)
+  \end{cases}
+\end{gather*}
+であり、この時点では分からない。
+
+先ほどと同様に
+区間$[-t_1, t_1]$での積分の$t_1\rightarrow 0$の極限を考える。
+$\mathbb{F}$による力積を$\mathbb{L}$として、
+$x$方向について
+\begin{gather*}
+  \lim_{t_1 \rightarrow 0}\int_{-t_1}^{t_1} m a_x dt = \lim_{t_1 \rightarrow 0}\int_{-t_1}^{t_1} F_x dt = L_x,
+  \\
+  \Rightarrow
+  m (v_x^a - v_x^b) = L_x.
+\end{gather*}
+$y$方向について
+\begin{gather*}
+  \lim_{t_1 \rightarrow 0}\int_{-t_1}^{t_1} m a_y dt
+  = \lim_{t_1 \rightarrow 0}\int_{-t_1}^{t_1} -mg dt 
+  + \lim_{t_1 \rightarrow 0}\int_{-t_1}^{t_1} F_y dt = 0 + L_y
+  \\
+  \Rightarrow
+  m (v_y^a - v_y^b) = L_y.
+\end{gather*}
+回転について
+\begin{align*}
+  \lim_{t_1 \rightarrow 0} \int_{-t_1}^{t_1} I\dot\omega dt
+  = \lim_{t_1 \rightarrow 0} \int_{-t_1}^{t_1} \mathbb{R} \times \mathbb{F}.
+\end{align*}
+ここで、極限と積分が入れ替えられることを認めると
+\begin{align*}
+  \lim_{t_1 \rightarrow 0} \int_{-t_1}^{t_1} I\dot\omega dt
+  &= \lim_{t_1 \rightarrow 0} \int_{-t_1}^{t_1} \mathbb{R} \times \mathbb{F}
+  \\ &= \mathbb{R} \times \lim_{t_1 \rightarrow 0} \int_{-t_1}^{t_1} \mathbb{F}
+  \\ &= \mathbb{R} \times \mathbb{L},
+\end{align*}
+\begin{gather*}
+  \Rightarrow
+  I (\omega^a - \omega^b) = \mathbb{R} \times \mathbb{L}.
+\end{gather*}
+まとめると
+\begin{gather*}
+  \begin{cases}
+    m (v_x^a - v_x^b) = L_x
+    \\
+    m (v_y^a - v_y^b) = L_y
+    \\
+    I (\omega^a - \omega^b) = \mathbb{R} \times \mathbb{L}
+  \end{cases}
+\end{gather*}
+であることが分かった。
+この時点で$v_x^a, v_y^a, \omega^a, L_x, L_y$が未知数であり、
+方程式が3つあるため、2つ足りない状況である。
+
+そこで、衝突の条件を考える。
+弾性係数を$e$とすると、
+質量が0といっても端点での速度がこの弾性係数に従う。
+端点での速度$\mathbb{v}_c (\text{cはcollisionのc})$は
+\begin{gather}
+  \mathbb{v}_c = \begin{pmatrix}
+    v_x
+    \\
+    v_y
+  \end{pmatrix} + \mathbb{R} \times \omega
+\end{gather}
+によって求められる。
+これらが2成分持つことによって残りの2方程式が導かれる。
+例えば$x,y$方向のどちらにおいても弾性係数が0の場合は
+\begin{gather*}
+  \mathbb{v}_c^a = \begin{pmatrix}
+    v_x^a
+    \\
+    v_y^a
+  \end{pmatrix} + \mathbb{R} \times \omega^a = \vec{0}
+\end{gather*}
+という方程式が導かれる。
+
 \section{2重振り子の衝突}
+
+慣れれば実は衝突は、
+\begin{itemize}
+  \item 運動方程式から、2回微分以外を含まない項を除き、2回微分を速度変化や力積に入れ替えたもの。
+  \item 衝突による速度変化の条件
+\end{itemize}
+によって簡単に求められる。
+運動方程式は実は2回微分の項に関しては1次線形だし、
+衝突の条件も基本的に1次線形だから、
+行列形式に直して機械的に速度変化や力積を求めることができる。
+
+片方の端点での衝突がもう片方の角速度などに影響を及ぼす
+2重振り子でも簡単に解けることを書くつもりである。
+COMING SOON.
 
 \end{document}
