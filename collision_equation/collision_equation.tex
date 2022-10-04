@@ -37,6 +37,9 @@ numbersep=1zw,
 lineskip=-0.5ex
 }
 
+% 数式の改ページ
+\allowdisplaybreaks[1]
+
 \begin{document}
 
 \title{衝突前後の運動方程式について}
@@ -259,5 +262,223 @@ $y$方向について
 片方の端点での衝突がもう片方の角速度などに影響を及ぼす
 2重振り子でも簡単に解けることを書くつもりである.
 COMING SOON.
+
+\clearpage
+\tiny
+\begin{align*}
+  & \alpha_1 = & &
+  \\
+  &\,\tau _{1} & &
+  \\
+    & &\times &
+    \Bigg(2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+2\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+2\,I_{2}\,{m_{1}}^2+4\,I_{2}\,m_{1}\,m_{2}+2\,I_{2}\,{m_{2}}^2\Bigg)
+    \\
+    & & &\Bigg/ 
+    \Bigg(
+      2\,I_{1}\,I_{2}\,{m_{1}}^2+
+      2\,I_{1}\,I_{2}\,{m_{2}}^2+
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      2\,I_{2}\,{l_{1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{1}}^2\,{m_{1}}^2\,m_{2}
+      \\ & & &+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,{m_{1}}^2\,m_{2}
+      \\ & & &+
+      4\,I_{1}\,I_{2}\,m_{1}\,m_{2}-
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,m_{1}\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,m_{2}
+      \\ & & &-
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)-
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)+
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)
+    \Bigg)
+  \\
+  &-\,\tau _{2} & &
+  \\
+    & & \times &
+    \Bigg(
+      2\,I_{2}\,{m_{1}}^2+
+      2\,I_{2}\,{m_{2}}^2+
+      2\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+
+      2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+
+      4\,I_{2}\,m_{1}\,m_{2}+
+      2\,l_{1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{2}\right)
+      \\ & & &+
+      2\,l_{1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,\cos\left(\mathrm{th}_{2}\right)-
+      2\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{2}\right)-
+      2\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,\cos\left(\mathrm{th}_{2}\right)
+    \Bigg)
+    \\
+    & & &\Bigg/
+    \Bigg(
+      2\,I_{1}\,I_{2}\,{m_{1}}^2+
+      2\,I_{1}\,I_{2}\,{m_{2}}^2+
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      2\,I_{2}\,{l_{1}}^2\,m_{1}\,{m_{2}}^2
+      \\ & & &+
+      2\,I_{2}\,{l_{1}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,{m_{1}}^2\,m_{2}
+      \\ & & &+
+      4\,I_{1}\,I_{2}\,m_{1}\,m_{2}-
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,m_{1}\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,m_{2}
+      \\ & & &-
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)-
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)+
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)
+    \Bigg)
+  \\
+  & +\,\mathrm{Fx} & &
+  \\
+    & & \times &
+    \Bigg(
+      2\,I_{2}\,l_{1}\,{m_{2}}^2\,\sin\left(\mathrm{th}_{1}\right)+
+      2\,I_{2}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,\sin\left(\mathrm{th}_{1}\right)+
+      l_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\sin\left(\mathrm{th}_{1}\right)+
+      l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\sin\left(\mathrm{th}_{1}\right)
+      \\ & & &+
+      2\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}\,\sin\left(\mathrm{th}_{1}\right)+
+      2\,I_{2}\,l_{1}\,m_{1}\,m_{2}\,\sin\left(\mathrm{th}_{1}\right)+
+      2\,I_{2}\,l_{\mathrm{MCD},1}\,m_{1}\,m_{2}\,\sin\left(\mathrm{th}_{1}\right)
+      \\ & & &-
+      l_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\sin\left(\mathrm{th}_{1}+
+      2\,\mathrm{th}_{2}\right)+
+      l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\sin\left(\mathrm{th}_{1}+
+      2\,\mathrm{th}_{2}\right)
+    \Bigg)
+    \\
+    & & &\Bigg/
+    \Bigg(
+      2\,I_{1}\,I_{2}\,{m_{1}}^2+
+      2\,I_{1}\,I_{2}\,{m_{2}}^2+
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2
+      \\ & & &+
+      2\,I_{2}\,{l_{1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{1}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,m_{1}\,{m_{2}}^2
+      \\ & & &+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,{m_{1}}^2\,m_{2}+
+      4\,I_{1}\,I_{2}\,m_{1}\,m_{2}-
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,m_{1}\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,m_{2}
+      \\ & & &-
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)-
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)+
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)
+    \Bigg)
+  \\
+  & -\,\mathrm{Fy} & &
+  \\
+    & & \times &
+    \Bigg(
+        2\,I_{2}\,l_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{1}\right)+
+        2\,I_{2}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,\cos\left(\mathrm{th}_{1}\right)+
+        l_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{1}\right)
+        \\ & & &+
+        l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{1}\right)+
+        2\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}\,\cos\left(\mathrm{th}_{1}\right)+
+        2\,I_{2}\,l_{1}\,m_{1}\,m_{2}\,\cos\left(\mathrm{th}_{1}\right)
+        \\ & & &+
+        2\,I_{2}\,l_{\mathrm{MCD},1}\,m_{1}\,m_{2}\,\cos\left(\mathrm{th}_{1}\right)-
+        l_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{1}+
+        2\,\mathrm{th}_{2}\right)+
+        l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2\,\cos\left(\mathrm{th}_{1}+
+        2\,\mathrm{th}_{2}\right)
+    \Bigg)
+    \\
+    & & &\Bigg/ 
+    \Bigg(
+      2\,I_{1}\,I_{2}\,{m_{1}}^2+
+      2\,I_{1}\,I_{2}\,{m_{2}}^2+
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2
+      \\ & & &+
+      2\,I_{2}\,{l_{1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{1}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,m_{1}\,{m_{2}}^2
+      \\ & & &+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,{m_{1}}^2\,m_{2}+
+      4\,I_{1}\,I_{2}\,m_{1}\,m_{2}-
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,m_{1}\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,m_{2}
+      \\ & & &-
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)-
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)+
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)
+    \Bigg)
+  \\
+  & + & &
+  \\
+    & & &\Bigg(
+      \sin\left(2\,\mathrm{th}_{2}\right)\,{l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{1}}^2-
+      2\,\sin\left(2\,\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{1}}^2
+      \\ & & &+
+      2\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,{l_{\mathrm{MCD},2}}^3\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{1}}^2+
+      4\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,{l_{\mathrm{MCD},2}}^3\,{m_{1}}^2\,{m_{2}}^2\,\omega _{1}\,\omega _{2}+
+      2\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,{l_{\mathrm{MCD},2}}^3\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{2}}^2
+      \\ & & &+
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,{\omega _{1}}^2+
+      4\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,\omega _{1}\,\omega _{2}+
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,{\omega _{2}}^2
+      \\ & & &+
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,{\omega _{1}}^2+
+      4\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,\omega _{1}\,\omega _{2}+
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,{\omega _{2}}^2
+      \\ & & &+
+      \sin\left(2\,\mathrm{th}_{2}\right)\,{l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{1}}^2
+      \\ & & &-
+      2\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^3\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{1}}^2-
+      4\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^3\,{m_{1}}^2\,{m_{2}}^2\,\omega _{1}\,\omega _{2}-
+      2\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^3\,{m_{1}}^2\,{m_{2}}^2\,{\omega _{2}}^2
+      \\ & & &-
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,{\omega _{1}}^2-
+      4\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,\omega _{1}\,\omega _{2}-
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,{m_{1}}^2\,m_{2}\,{\omega _{2}}^2
+      \\ & & &-
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,{\omega _{1}}^2-
+      4\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,\omega _{1}\,\omega _{2}-
+      2\,I_{2}\,\sin\left(\mathrm{th}_{2}\right)\,l_{\mathrm{MCD},1}\,l_{\mathrm{MCD},2}\,m_{1}\,{m_{2}}^2\,{\omega _{2}}^2
+    \Bigg)
+    \\
+    & & &\Bigg/ \Bigg(
+      2\,I_{1}\,I_{2}\,{m_{1}}^2+
+      2\,I_{1}\,I_{2}\,{m_{2}}^2+
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2+
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2
+      \\ & & &+
+      2\,I_{2}\,{l_{1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{1}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,m_{2}+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,m_{1}\,{m_{2}}^2+
+      2\,I_{2}\,{l_{\mathrm{MCD},1}}^2\,{m_{1}}^2\,m_{2}
+      \\ & & &+
+      4\,I_{1}\,I_{2}\,m_{1}\,m_{2}-
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,m_{1}\,{m_{2}}^2-
+      4\,I_{2}\,l_{1}\,l_{\mathrm{MCD},1}\,{m_{1}}^2\,m_{2}
+      \\ & & &-
+      {l_{1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)-
+      {l_{\mathrm{MCD},1}}^2\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)+
+      2\,l_{1}\,l_{\mathrm{MCD},1}\,{l_{\mathrm{MCD},2}}^2\,{m_{1}}^2\,{m_{2}}^2\,\cos\left(2\,\mathrm{th}_{2}\right)
+    \Bigg)
+\end{align*}
+\normalsize
 
 \end{document}
