@@ -247,9 +247,10 @@ $y$方向について
 \end{gather*}
 という方程式が導かれる.
 
+\clearpage
 \section{2重振り子の衝突}
 
-慣れれば実は衝突は,
+慣れれば衝突は,
 \begin{itemize}
   \item 運動方程式から,2回微分以外を含まない項を除き,2回微分を速度変化や力積に入れ替えたもの.
   \item 衝突による速度変化の条件
@@ -259,11 +260,19 @@ $y$方向について
 衝突の条件も基本的に1次線形だから,
 行列形式に直して機械的に速度変化や力積を求めることができる.
 
-片方の端点での衝突がもう片方の角速度などに影響を及ぼす
-2重振り子でも簡単に解けることを書くつもりである.
-COMING SOON.
+例えば、
+固定軸を持たない2重振り子の片方の端点での衝突を考える
+(図 \ref{2seg_collision.png})。
+片方の端点での衝突はもう片方の速度、角速度に影響を及ぼすため、少し難しくなる。
 
-\clearpage
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = 0.6\textwidth]{2seg_collision.png}
+  \caption{固定軸を持たない2重振り子}
+  \label{2seg_collision.png}
+\end{figure}
+
+この時、$\alpha_1 := \ddot{\theta}_1$は次の難解な方程式を満たす。
 \tiny
 \begin{align*}
   \alpha_1 =
@@ -479,5 +488,105 @@ COMING SOON.
     \Bigg)
 \end{align*}
 \normalsize
+他の2回微分である$\alpha_2, a_x, a_y$も同様に難解な方程式を満たすが、
+それぞれの係数を適当に置けばこれらを単純に書き直せる。
+\begin{align*}
+  \alpha_1 &= A_1 \tau_1 + A_2 \tau_2 + A_3 F_x + A_4 F_y + A_5
+  \\
+  \alpha_2 &= B_1 \tau_1 + B_2 \tau_2 + B_3 F_x + B_4 F_y + B_5
+  \\
+  a_x &= C_1 \tau_1 + C_2 \tau_2 + C_3 F_x + C_4 F_y + C_5
+  \\
+  a_y &= D_1 \tau_1 + D_2 \tau_2 + D_3 F_x + D_4 F_y + D_5
+\end{align*}
+行列形式で表現すると
+\begin{align*}
+  \begin{pmatrix}
+    \alpha_1
+    \\
+    \alpha_2
+    \\
+    a_x
+    \\
+    a_y
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    A_1 & A_2 & A_3 & A_4
+    \\
+    B_1 & B_2 & B_3 & B_4
+    \\
+    C_1 & C_2 & C_3 & C_4
+    \\
+    D_1 & D_2 & D_3 & D_4
+  \end{pmatrix}
+  \begin{pmatrix}
+    \tau_1
+    \\
+    \tau_2
+    \\
+    F_x
+    \\
+    F_y
+  \end{pmatrix}
+  + 
+  \begin{pmatrix}
+    A_5
+    \\
+    B_5
+    \\
+    C_5
+    \\
+    D_5
+  \end{pmatrix}
+\end{align*}
+
+今までの衝突のように衝突の微小時間に着目すれば
+右辺は$\int F_x, \int F_y$のみが残り、
+\begin{align*}
+  \begin{pmatrix}
+    \omega_1^a - \omega_1^b
+    \\
+    \omega_2^a - \omega_2^b
+    \\
+    v_x^a - v_x^b
+    \\
+    v_y^a - v_y^b
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    A_1 & A_2 & A_3 & A_4
+    \\
+    B_1 & B_2 & B_3 & B_4
+    \\
+    C_1 & C_2 & C_3 & C_4
+    \\
+    D_1 & D_2 & D_3 & D_4
+  \end{pmatrix}
+  \begin{pmatrix}
+    0
+    \\
+    0
+    \\
+    \int F_x
+    \\
+    \int F_y
+  \end{pmatrix}
+\end{align*}
+となる。
+ここで未知数は$\omega_1^a, \omega_2^a, v_x^a, v_y^a, \int F_x, \int F_y$の6つで、
+方程式はまだ4つしか見つかっていない。
+
+そこで衝突の条件として
+例えば弾性衝突を考えれば
+\begin{align*}
+  \begin{cases}
+    v_x^a = -v_x^b
+    \\
+    v_y^a = -v_y^b
+  \end{cases}
+\end{align*}
+の2つの方程式が加わり、未知数が全て求まるようになる。
+
 
 \end{document}
