@@ -144,58 +144,97 @@ $\vec{F}_W$と$-\vec{F}_S$は
 運動方程式は
 慣性力を$Ma_{arm}$として
 \begin{align}
-  ML\omega^2 &= Mg\sin\Theta_S &+& Ma_{arm}\sin\theta_S &- F_S\cos\theta_S
+  ML\omega^2 
+  &= Mg\sin\Theta_S 
+  &+& Mr_{arm}\ddot{\theta}_W\sin\theta_S 
+  &-& Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S 
+  &- F_S\cos\theta_S
   \label{eq:PB:L_start}
   \\
-  I\dot\omega &= -Mg\cos\Theta_S \cdot L &-& Ma_{arm}\cos\theta_S \cdot L &
+  I\dot\omega 
+  &= -Mg \cdot L\cos\Theta_S
+  &-& Mr_{arm}\ddot{\theta}_W \cdot L \cos\theta_S
+  &-& Mr_{arm}\dot{\theta}_W{}^2 \cdot L \sin\theta_S
+  &
   \label{eq:PB:I_start}
   \\
-  I_G\dot\omega &= & & & F_S \sin\theta_S \cdot L
+  I_G\dot\omega &= & & & & & F_S \cdot L \sin\theta_S
   \label{eq:PB:IG_start}
 \end{align}
 となる。
 まず式\ref{eq:PB:I_start}, \ref{eq:PB:IG_start}によって
 \begin{align}
-  F_S\sin\theta_S \cdot L 
-  & = I_G \cdot \frac{-Mg\cos\Theta_S \cdot L - Ma_{arm}\cos\theta_S \cdot L}{I}
+  F_S \cdot L \sin\theta_S
+  & = I_G \cdot 
+  \frac{
+    -Mg \cdot L\cos\Theta_S
+    - Mr_{arm}\ddot{\theta}_W \cdot L \cos\theta_S
+    - Mr_{arm}\dot{\theta}_W{}^2 \cdot L \sin\theta_S
+  }{I}
   \\
   \left( \because L > 0 \right) &
   \\
   \Leftrightarrow
   F_S\sin\theta_S
-  & = \frac{I_G}{I}\Bigl( -Mg\cos\Theta_S - Ma_{arm}\cos\theta_S \Bigr)
+  & = \frac{I_G}{I}
+  \Bigl(
+    -Mg \cos\Theta_S
+    - Mr_{arm}\ddot{\theta}_W \cos\theta_S
+    - Mr_{arm}\dot{\theta}_W{}^2 \sin\theta_S
+  \Bigr)
   \\
   \Leftrightarrow
   0
-  & = F_S\sin\theta_S - \frac{I_G}{I}\Bigl( -Mg\cos\Theta_S - Ma_{arm}\cos\theta_S \Bigr)
+  & = F_S\sin\theta_S - \frac{I_G}{I}
+  \Bigl(
+    -Mg \cos\Theta_S
+    - Mr_{arm}\ddot{\theta}_W \cos\theta_S
+    - Mr_{arm}\dot{\theta}_W{}^2 \sin\theta_S
+  \Bigr)
   \\
   \Leftrightarrow
   0
-  & = F_S\sin\theta_S + Mg\frac{I_G}{I}\cos\Theta_S + Ma_{arm}\frac{I_G}{I}\cos\theta_S
+  & = F_S\sin\theta_S
+  +Mg \frac{I_G}{I}\cos\Theta_S
+  +Mr_{arm}\ddot{\theta}_W \frac{I_G}{I}\cos\theta_S
+  +Mr_{arm}\dot{\theta}_W{}^2 \frac{I_G}{I}\sin\theta_S
   \label{eq:PB:Fs_sin}
 \end{align}
 式\ref{eq:PB:L_start},\ref{eq:PB:Fs_sin}を変形して
 \begin{align}
-  ML\omega^2 \sin\theta_S &= Mg\sin\Theta_S \sin\theta_S
-  &+& Ma_{arm}\sin^2\theta_S 
-  &- F_S\cos\theta_S\sin\theta_S
+  ML\omega^2 \sin\theta_S 
+  &= Mg\sin\Theta_S \sin\theta_S
+  &+& Mr_{arm}\ddot{\theta}_W\sin^2\theta_S
+  &-& Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S \sin\theta_S
+  \notag
+  \\
+  &&&&&- F_S\cos\theta_S\sin\theta_S
   \\
   0
-  &=  Mg\frac{I_G}{I}\cos\Theta_S\cos\theta_S 
-  &+& Ma_{arm}\frac{I_G}{I}\cos^2\theta_S 
-  &+ F_S\sin\theta_S\cos\theta_S
+  &=  Mg\frac{I_G}{I}\cos\Theta_S\cos\theta_S
+  &+& Mr_{arm}\ddot{\theta}_W \frac{I_G}{I}\cos^2\theta_S
+  &+& Mr_{arm}\dot{\theta}_W{}^2 \frac{I_G}{I}\sin\theta_S\cos\theta_S
+  \notag
+  \\
+  &&&&&+ F_S\sin\theta_S\cos\theta_S
 \end{align}
 この2式から
 \begin{align}
   ML\omega^2 \sin\theta_S
   = Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)
-  + Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
+  & + Mr_{arm}\ddot{\theta}_W\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
+  \notag
+  \\
+  & - Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S \sin\theta_S\left( 1 - \frac{I_G}{I} \right)
 \end{align}
 \begin{align}
   \Leftrightarrow
-  Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
+  Mr_{arm}\ddot{\theta}_W\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
   = ML\omega^2 \sin\theta_S
-  - Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)
+  &- Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)
+  \notag
+  \\
+  &+ Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S \sin\theta_S\left( 1 - \frac{I_G}{I} \right)
   \label{eq:PB:a_arm_end}
 \end{align}
 が分かる。
@@ -261,41 +300,46 @@ $a_{arm}$の符号は右辺で決まることになる。
   \item $\omega^2$が小さく、向心力ないし遠心力が十分に小さい場合
   \begin{align}
     Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
-    \approx - Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)  
+    \approx 
+    &- Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)  
+    \notag
+    \\
+    &+ Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S \sin\theta_S\left( 1 - \frac{I_G}{I} \right)
   \end{align}
-  という近似が成り立つから、
-  $-\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)$
-  によって正負が決定する。
-  例えば$\Theta_S = \pi$である状況では
-  \begin{align}
-    -\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)
-    = -\left(-\frac{I_G}{I}\cos\theta_S\right) = \frac{I_G}{I}\cos\theta_S
-  \end{align}
-  であるから、
-  $\cos\theta_S$によって正負が決定される。
-  図\ref{PN_horizontal_positive.png}の状況では
-  $\cos\theta_S>0$であるから、
-  上肢は正の方向に加速する。
-  図\ref{PN_horizontal_negative.png}の状況では
-  $\cos\theta_S<0$であるから、
-  上肢は負の方向に加速する。
-  \begin{figure}[h]
-    \begin{tabular}{cc}
-      \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{PN_horizontal_positive.png}
-        \subcaption{$a_{arm}$が正のケース}
-        \label{PN_horizontal_positive.png}
-      \end{minipage} &
-      \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{PN_horizontal_negative.png}
-        \subcaption{$a_{arm}$が負のケース}
-        \label{PN_horizontal_negative.png}
-      \end{minipage}
-    \end{tabular}
-    \caption{胴体が水平のとき}
-  \end{figure}
+  という近似が成り立つ。
+%   という近似が成り立つから、
+%   $-\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)$
+%   によって正負が決定する。
+%   例えば$\Theta_S = \pi$である状況では
+%   \begin{align}
+%     -\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)
+%     = -\left(-\frac{I_G}{I}\cos\theta_S\right) = \frac{I_G}{I}\cos\theta_S
+%   \end{align}
+%   であるから、
+%   $\cos\theta_S$によって正負が決定される。
+%   図\ref{PN_horizontal_positive.png}の状況では
+%   $\cos\theta_S>0$であるから、
+%   上肢は正の方向に加速する。
+%   図\ref{PN_horizontal_negative.png}の状況では
+%   $\cos\theta_S<0$であるから、
+%   上肢は負の方向に加速する。
+%   \begin{figure}[h]
+%     \begin{tabular}{cc}
+%       \begin{minipage}[t]{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=1\textwidth]{PN_horizontal_positive.png}
+%         \subcaption{$a_{arm}$が正のケース}
+%         \label{PN_horizontal_positive.png}
+%       \end{minipage} &
+%       \begin{minipage}[t]{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=1\textwidth]{PN_horizontal_negative.png}
+%         \subcaption{$a_{arm}$が負のケース}
+%         \label{PN_horizontal_negative.png}
+%       \end{minipage}
+%     \end{tabular}
+%     \caption{胴体が水平のとき}
+%   \end{figure}
 \end{enumerate}
 
 \subsection{胴体と上肢の位置関係と角運動量}
@@ -303,32 +347,54 @@ $a_{arm}$の符号は右辺で決まることになる。
 $F_S$を決定する。
 式\ref{eq:PB:I_start},\ref{eq:PB:IG_start}により
 \begin{align}
-  & \frac{I}{I_G}F_S\sin\theta_S \cdot L = -Mg\cos\Theta_S \cdot L - Ma_{arm}\cos\theta_S \cdot L
+  & \frac{I}{I_G}F_S\sin\theta_S \cdot L 
+  = -Mg \cdot L\cos\Theta_S
+  - Mr_{arm}\ddot{\theta}_W \cdot L \cos\theta_S
+  - Mr_{arm}\dot{\theta}_W{}^2 \cdot L \sin\theta_S
   \\
   & \left( \because L > 0 \right)
   \\
   \Leftrightarrow
-  & 0= -Mg\cos\Theta_S - Ma_{arm}\cos\theta_S - \frac{I}{I_G}F_S\sin\theta_S
+  & 0
+  = -Mg \cos\Theta_S
+  - Mr_{arm}\ddot{\theta}_W \cos\theta_S
+  - Mr_{arm}\dot{\theta}_W{}^2 \sin\theta_S
+  - \frac{I}{I_G}F_S\sin\theta_S
   \label{eq:PB:FS_middle}
 \end{align}
 式\ref{eq:PB:L_start},\ref{eq:PB:FS_middle}を変形して
 \begin{align}
-  ML\omega^2 \cos\theta_S &= Mg\sin\Theta_S\cos\theta_S &+& Ma\sin\theta_S\cos\theta_S &- &F_S\cos^2\theta_S
+  ML\omega^2 \cos\theta_S
+  % = Mg\sin\Theta_S\cos\theta_S &+& Ma\sin\theta_S\cos\theta_S &- &F_S\cos^2\theta_S
+  &= Mg\sin\Theta_S \cos\theta_S
+  &+& Mr_{arm}\ddot{\theta}_W\sin\theta_S  \cos\theta_S
+  &-& Mr_{arm}\dot{\theta}_W{}^2\cos^2\theta_S 
+  \notag
   \\
-  0 &= -Mg\cos\Theta_S \sin\theta_S 
-  &-& Ma_{arm}\cos\theta_S \sin\theta_S 
-  &- &\frac{I}{I_G}F_S\sin\theta_S \sin\theta_S
+  &&&&& - F_S\cos\theta_S
+  \\
+  0 
+  &= -Mg \cos\Theta_S \sin\theta_S
+  &-& Mr_{arm}\ddot{\theta}_W \cos\theta_S \sin\theta_S
+  &-& Mr_{arm}\dot{\theta}_W{}^2 \sin^2\theta_S
+  \notag
+  \\
+  &&&&& - \frac{I}{I_G}F_S\sin^2\theta_S
 \end{align}
 この2式により
 \begin{align}
   ML\omega^2 \cos\theta_S 
-  &= Mg\left( \sin\Theta_S \cos\theta_S - \cos\Theta_S \sin\theta_S\right)
-  - F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
+  = Mg\left( \sin\Theta_S \cos\theta_S - \cos\Theta_S \sin\theta_S\right)
+  &- Mr_{arm}\dot{\theta}_W{}^2
+  \notag
+  \\
+  &- F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
 \end{align}
 \begin{align}
   \therefore
   F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
   &= -ML\omega^2 \cos\theta_S + Mg \sin(\underbrace{\Theta_S - \theta_S}_{=\theta_W+\frac{1}{2}\pi})
+  - Mr_{arm}\dot{\theta}_W{}^2
   \label{eq:PB:FS_end}
 \end{align}
 が分かる。
