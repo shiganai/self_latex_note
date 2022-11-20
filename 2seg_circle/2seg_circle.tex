@@ -113,14 +113,18 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
 \begin{gather}
   \left\{
   \begin{aligned}  
-    ML^2\Omega^2 - M\ddot{L} \cdot L
+    ML^2\Omega^2 \cos\theta &- M\ddot{L} \cdot L \cos\theta
+    &&&&
+    \\
     =& M(g+a_{PB})\sin\Theta L\cos\theta
     &+& Mr_{arm}\ddot{\theta}_W\sin\theta L\cos\theta
     &-& Mr_{arm}\dot{\theta}_W{}^2\cos^2\theta \cdot L
     \\
     &&&&&- F_S\cos^2\theta \cdot L
     \\
-    I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
+    I\dot\Omega \sin\theta &+ \dot{I}\Omega \sin\theta
+    &&&&
+    \\
     =& -M(g+a_{PB}) \cdot L\cos\Theta \sin\theta
     &-& Mr_{arm}\ddot{\theta}_W \cdot L \cos\theta \sin\theta
     &-& Mr_{arm}\dot{\theta}_W{}^2 \cdot L \sin^2\theta
@@ -132,7 +136,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \\
   \begin{aligned}
     \Rightarrow
-    ML^2\Omega^2 - M\ddot{L}L + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
+    ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
     =& M(g+a_{PB}) L(\sin\Theta \cos\theta - \cos\Theta \sin\theta)
     \\
     &\quad - Mr_{Arm}L(\cos^2\theta + \sin^2\theta)
@@ -142,7 +146,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \notag
   \\
   \Rightarrow
-  ML^2\Omega^2 - M\ddot{L}L + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
+  ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
   =
   M(g+a_{PB}) L\sin(\Theta - \theta) - Mr_{Arm}\dot{\theta}_W{}^2L - F_S\cos^2\theta \cdot L
   \notag
@@ -152,7 +156,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \begin{aligned}
     M(g+a_{PB}) L\sin(\Theta - \theta)
     =&
-    ML^2\Omega^2 - M\ddot{L}L + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
+    ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
     \\
     &\quad + Mr_{Arm}\dot{\theta}_W{}^2L + F_S\cos^2\theta \cdot L
   \end{aligned}
@@ -162,7 +166,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \begin{aligned}
     M(g+a_{PB}) L\sin(\Theta - \theta)
     =&
-    ML^2\Omega^2 - M\ddot{L}L 
+    ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta
     + \dot{I}\Omega \sin\theta 
     \\
     &\quad + I\sin\theta
@@ -178,7 +182,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
     \Rightarrow
     M(g+a_{PB}) L\sin(\Theta - \theta)
     =&
-    ML^2\Omega^2 - M\ddot{L}L
+    ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta
     + Mr_{Arm}\dot{\theta}_W{}^2L 
     \\
     &\quad
