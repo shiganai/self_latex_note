@@ -95,6 +95,11 @@ lineskip=-0.5ex
 $\Theta$として$\Theta_{S\rightarrow BL}, \Theta_{B\rightarrow L}$のどちらを、
 $\theta$として$\theta_{S\rightarrow BL}, \theta_{B\rightarrow L}$のどちらを
 採用するかは後で述べる。
+ただし、$S\rightarrow BL, B\rightarrow L$のどちらを選んだにせよ、
+\begin{gather*}
+  \theta = \theta_W + \frac{1}{2}\pi,\quad \Theta = \theta + \Theta_W
+\end{gather*}
+は成り立つ。
 
 式 \ref{eq:PB:IG_start}から
 \begin{gather}
@@ -136,19 +141,23 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \\
   \begin{aligned}
     \Rightarrow
-    ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
-    =& M(g+a_{PB}) L(\sin\Theta \cos\theta - \cos\Theta \sin\theta)
+    ML^2\Omega^2 \cos\theta &- M\ddot{L}L \cos\theta + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
     \\
-    &\quad - Mr_{Arm}L(\cos^2\theta + \sin^2\theta)
-    \\
-    &\quad - F_S\cos^2\theta \cdot L
+    &= M(g+a_{PB}) L(\sin\Theta \cos\theta - \cos\Theta \sin\theta)
+    - Mr_{Arm}L(\cos^2\theta + \sin^2\theta)
+    - F_S\cos^2\theta \cdot L
   \end{aligned}
   \notag
   \\
-  \Rightarrow
-  ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta + I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
-  =
-  M(g+a_{PB}) L\sin(\Theta - \theta) - Mr_{Arm}\dot{\theta}_W{}^2L - F_S\cos^2\theta \cdot L
+  \notag
+  \\
+  \begin{aligned}
+    \Rightarrow
+    ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta &+ I\dot\Omega \sin\theta + \dot{I}\Omega \sin\theta
+    \\
+    &= 
+    M(g+a_{PB}) L\sin(\Theta - \theta) - Mr_{Arm}\dot{\theta}_W{}^2L - F_S\cos^2\theta \cdot L
+  \end{aligned}
   \notag
 \end{gather}
 この式から$a_{PB}$を導く。
@@ -162,7 +171,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \end{aligned}
 \end{align}
 ここで式 \ref{eq:Omega}により
-\begin{align}
+\begin{gather}
   \begin{aligned}
     M(g+a_{PB}) L\sin(\Theta - \theta)
     =&
@@ -177,6 +186,15 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
     \\
     &\quad + Mr_{Arm}\dot{\theta}_W{}^2L + F_S\cos^2\theta \cdot L
   \end{aligned}
+  \\
+  \notag
+  \\
+  \left(
+    \because \Theta = \theta + \Theta_W
+  \right)
+  \notag
+  \\
+  \notag
   \\
   \begin{aligned}
     \Rightarrow
@@ -236,6 +254,6 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
       \cos^2\theta + \frac{I}{I_G}\sin^2\theta
     \right)
   \end{aligned}
-\end{align}
+\end{gather}
 
 \end{document}
