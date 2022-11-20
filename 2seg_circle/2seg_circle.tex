@@ -180,7 +180,7 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
   \\
   \begin{aligned}
     \Rightarrow
-    M(g+a_{PB}) L\sin(\Theta - \theta)
+    M(g+a_{PB}) L\sin\Theta_W
     =&
     ML^2\Omega^2 \cos\theta - M\ddot{L}L \cos\theta
     + Mr_{Arm}\dot{\theta}_W{}^2L 
@@ -193,6 +193,46 @@ $Mr_{Arm}\ddot{\theta}_W$の項を消す。
     \\
     &\quad
     + F_S L\left(
+      \cos^2\theta + \frac{I}{I_G}\sin^2\theta
+    \right)
+  \end{aligned}
+  \\
+  \begin{aligned}
+    \Rightarrow
+    (g+a_{PB})\sin\Theta_W
+    =&
+    L\Omega^2 \cos\theta - \ddot{L}\cos\theta
+    + r_{Arm}\dot{\theta}_W{}^2
+    \\
+    &\quad
+    + \left(
+      \dot{I} + \frac{I\dot{I}_G}{I_G}
+    \right)
+    \frac{\Omega\sin\theta}{ML}
+    \\
+    &\quad
+    + \frac{F_S}{M} \left(
+      \cos^2\theta + \frac{I}{I_G}\sin^2\theta
+    \right)
+  \end{aligned}
+  \\
+  \begin{aligned}
+    \Rightarrow
+    a_{PB}
+    =&
+    -g +
+    \frac{L\Omega^2 \cos\theta}{\sin\Theta_W}
+    - \frac{\ddot{L}\cos\theta}{\sin\Theta_W}
+    + \frac{r_{Arm}\dot{\theta}_W{}^2}{\sin\Theta_W}
+    \\
+    &\quad
+    + \left(
+      \dot{I} + \frac{I\dot{I}_G}{I_G}
+    \right)
+    \frac{\Omega\sin\theta}{ML\sin\Theta_W}
+    \\
+    &\quad
+    + \frac{F_S}{M\sin\Theta_W} \left(
       \cos^2\theta + \frac{I}{I_G}\sin^2\theta
     \right)
   \end{aligned}
