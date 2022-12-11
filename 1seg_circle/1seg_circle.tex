@@ -72,7 +72,7 @@
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width = 0.6\textwidth]{F_arm_config.png}
+  \includegraphics[width = 0.4\textwidth]{F_arm_config.png}
   \caption{上肢に働く力}
   \label{F_arm_config.png}
 \end{figure}
@@ -471,11 +471,37 @@ $\ddot\theta_{W}$の項を打ち消す。
 \end{align}
 が分かる。
 
-$F_S$の正負は
 $\left( \cos^2\theta_{S\rightarrow BL} + \frac{I_{S\rightarrow BL}}{I_{BL}}\sin^2\theta_{S\rightarrow BL} \right) > 0$
 であるため、
+$F_S$の正負は
 右辺の正負から決まるが、
 右辺の正負は式からだけでは判断できない。
+ただし、
+胴体・下肢の合成剛体の回転速度による向心力の影響の正負は
+\begin{align*}
+  -ML_{S\rightarrow BL}\Omega_{S\rightarrow BL}{}^2 \cos\theta_{S\rightarrow BL}
+  = ML_{S\rightarrow BL}\Omega_{S\rightarrow BL}{}^2 (-\cos\theta_{S\rightarrow BL})
+\end{align*}
+ゆえに、
+\begin{align*}
+  -\cos\theta_{S\rightarrow BL} < 0
+  \Leftrightarrow \cos\theta_{S\rightarrow BL} 
+  \leftrightarrow \frac{1}{2}\pi < \theta_{S\rightarrow BL} < \frac{3}{2}\pi
+\end{align*}
+の時に
+胴体・下肢の合成剛体の回転速度による向心力は
+$F_S$を大きくするように作用する
+(図 \ref{centeripetal_force_F_S_positive.png})。
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = 0.9\textwidth]{centeripetal_force_F_S_positive.png}
+  \caption{
+    $\leftrightarrow \frac{1}{2}\pi < \theta_{S\rightarrow BL} < \frac{3}{2}\pi$である状況
+  }
+  \label{centeripetal_force_F_S_positive.png}
+\end{figure}
+
 なので
 ここから先は
 $F_S$は大体正であることを前提とする。(だから間違っている可能性がある)
