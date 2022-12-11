@@ -82,19 +82,19 @@
 肩関節側に働く力を$-\vec{F}_S$とする。
 肩関節側に働く力は反作用として定義しておく。
 上肢に関する並進運動のつり合いを考えると
-\begin{align}
+\begin{align*}
   0 \cdot \vec{a}_{Arm} &= \vec{F}_W - \vec{F}_S
   \\
   \Leftrightarrow
   0 &= \vec{F}_W - \vec{F}_S
-\end{align}
+\end{align*}
 が導かれるから、
 $\vec{F}_W$と$-\vec{F}_S$は
 方向が同じで、大きさが反対である力である。
 また、手関節周りのトルクに関するつり合いを考えると
 上肢の長さを$r_{Arm}$、
 手関節から肩関節に向く方向単位ベクトルを$\vec{e}_{Arm}$とすれば
-\begin{align}
+\begin{align*}
   0 \cdot \omega_{Arm} &= r_{Arm} \vec{e}_{Arm} \times -\vec{F}_S
   \\
   \Leftrightarrow
@@ -102,7 +102,7 @@ $\vec{F}_W$と$-\vec{F}_S$は
   \\
   \Leftrightarrow
   \vec{e}_{Arm} &\parallel \vec{-F_S}
-\end{align}
+\end{align*}
 よって上肢の肩関節側に働く力$-\vec{F}_S$は
 上肢と平行であり、
 ゆえに上肢の手関節側に働く力$\vec{F}_W$も上肢と平行になる。
@@ -171,8 +171,10 @@ $\vec{F}_W$と$-\vec{F}_S$は
     - Mr_{arm}\ddot{\theta}_W \cdot L \cos\theta_S
     - Mr_{arm}\dot{\theta}_W{}^2 \cdot L \sin\theta_S
   }{I}
+  \notag
   \\
   \left( \because L > 0 \right) &
+  \notag
   \\
   \Leftrightarrow
   F_S\sin\theta_S
@@ -182,6 +184,7 @@ $\vec{F}_W$と$-\vec{F}_S$は
     - Mr_{arm}\ddot{\theta}_W \cos\theta_S
     - Mr_{arm}\dot{\theta}_W{}^2 \sin\theta_S
   \Bigr)
+  \notag
   \\
   \Leftrightarrow
   0
@@ -191,6 +194,7 @@ $\vec{F}_W$と$-\vec{F}_S$は
     - Mr_{arm}\ddot{\theta}_W \cos\theta_S
     - Mr_{arm}\dot{\theta}_W{}^2 \sin\theta_S
   \Bigr)
+  \notag
   \\
   \Leftrightarrow
   0
@@ -201,7 +205,7 @@ $\vec{F}_W$と$-\vec{F}_S$は
   \label{eq:PB:Fs_sin}
 \end{align}
 式\ref{eq:PB:L_start},\ref{eq:PB:Fs_sin}を変形して
-\begin{align}
+\begin{align*}
   ML\omega^2 \sin\theta_S 
   &= Mg\sin\Theta_S \sin\theta_S
   &+& Mr_{arm}\ddot{\theta}_W\sin^2\theta_S
@@ -217,16 +221,16 @@ $\vec{F}_W$と$-\vec{F}_S$は
   \notag
   \\
   &&&&&+ F_S\sin\theta_S\cos\theta_S
-\end{align}
+\end{align*}
 この2式から
-\begin{align}
+\begin{align*}
   ML\omega^2 \sin\theta_S
   = Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)
   & + Mr_{arm}\ddot{\theta}_W\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
   \notag
   \\
   & - Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S \sin\theta_S\left( 1 - \frac{I_G}{I} \right)
-\end{align}
+\end{align*}
 \begin{align}
   \Leftrightarrow
   Mr_{arm}\ddot{\theta}_W\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
@@ -257,11 +261,11 @@ $a_{arm}$の符号は右辺で決まることになる。
 
 \begin{enumerate}
   \item $\omega^2$が大きく、向心力ないし遠心力が十分に大きい場合
-  \begin{align}
+  \begin{align*}
     Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
     \approx ML\omega^2 \sin\theta_S
     \label{eq:PB:a_arm_MLw2}
-  \end{align}
+  \end{align*}
   という近似が成り立つから、
   $\sin\theta_S$によって正負が決定される。
   上肢が正の方向に加速するのは
@@ -298,23 +302,23 @@ $a_{arm}$の符号は右辺で決まることになる。
   \end{figure}
 
   \item $\omega^2$が小さく、向心力ないし遠心力が十分に小さい場合
-  \begin{align}
+  \begin{align*}
     Ma_{arm}\left( \sin^2\theta_S + \frac{I_G}{I}\cos^2\theta_S \right)
     \approx 
     &- Mg\left( \sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S \right)  
     \notag
     \\
     &+ Mr_{arm}\dot{\theta}_W{}^2\cos\theta_S \sin\theta_S\left( 1 - \frac{I_G}{I} \right)
-  \end{align}
+  \end{align*}
   という近似が成り立つ。
 %   という近似が成り立つから、
 %   $-\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)$
 %   によって正負が決定する。
 %   例えば$\Theta_S = \pi$である状況では
-%   \begin{align}
+%   \begin{align*}
 %     -\left(\sin\Theta_S \sin\theta_S + \frac{I_G}{I}\cos\Theta_S \cos\theta_S\right)
 %     = -\left(-\frac{I_G}{I}\cos\theta_S\right) = \frac{I_G}{I}\cos\theta_S
-%   \end{align}
+%   \end{align*}
 %   であるから、
 %   $\cos\theta_S$によって正負が決定される。
 %   図\ref{PN_horizontal_positive.png}の状況では
@@ -363,7 +367,7 @@ $F_S$を決定する。
   \label{eq:PB:FS_middle}
 \end{align}
 式\ref{eq:PB:L_start},\ref{eq:PB:FS_middle}を変形して
-\begin{align}
+\begin{align*}
   ML\omega^2 \cos\theta_S
   % = Mg\sin\Theta_S\cos\theta_S &+& Ma\sin\theta_S\cos\theta_S &- &F_S\cos^2\theta_S
   &= Mg\sin\Theta_S \cos\theta_S
@@ -380,16 +384,16 @@ $F_S$を決定する。
   \notag
   \\
   &&&&& - \frac{I}{I_G}F_S\sin^2\theta_S
-\end{align}
+\end{align*}
 この2式により
-\begin{align}
+\begin{align*}
   ML\omega^2 \cos\theta_S 
   = Mg\left( \sin\Theta_S \cos\theta_S - \cos\Theta_S \sin\theta_S\right)
   &- Mr_{arm}\dot{\theta}_W{}^2
   \notag
   \\
   &- F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
-\end{align}
+\end{align*}
 \begin{align}
   \therefore
   F_S\left( \cos^2\theta_S + \frac{I}{I_G}\sin^2\theta_S \right)
@@ -415,9 +419,9 @@ $Mg\sin(\theta_W + \frac{1}{2}\pi) ( > 0 \because -\frac{1}{2}\pi < \theta_W < \
 $F_S$は大体正であることを前提とする。(だから間違っている可能性がある)
 
 式\ref{eq:PB:IG_start}
-\begin{align}
+\begin{align*}
   I_G\dot\omega = F_S \sin\theta_S \cdot L
-\end{align}
+\end{align*}
 により、
 正の$F_S$は$0 < \theta_S < \pi$であるうちは
 角運動量を増加する。
@@ -431,9 +435,9 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
 
 \subsection{胴体と上肢の位置関係と鉛直反力}
 肩関節で胴体に対して鉛直方向に働く力の大きさは
-\begin{align}
+\begin{align*}
   F_s\sin(\theta_W + \frac{1}{2}\pi)
-\end{align}
+\end{align*}
 である。
 上肢がより鉛直の時ほど、ある$F_S$に対しては大きな鉛直反力が発生することになる。
 
@@ -510,7 +514,7 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
 このサブセクションの目的は
 図\ref*{Appendix_base_config.png}
 の運動方程式が
-\begin{align}
+\begin{align*}
   \begin{cases}
     ML\omega^2  &= F_L - \sum_i F_i^L
     \\
@@ -518,10 +522,10 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
     \\
     I_G\dot\omega &= -F_\theta L + \sum_i F_i^\theta ( l_i - L )
   \end{cases}
-\end{align}
+\end{align*}
 で表されることを確認することである。
 重力が外力として存在するような場合、
-\begin{align}
+\begin{align*}
   \begin{cases}
     ML\omega^2  &= F_L - \sum_i ( -mg\sin\theta + F_i^L ) = F_L + Mg\sin\theta - \sum_i F_i^L
     \\
@@ -529,7 +533,7 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
     \\
     I_G\dot\omega &= -F_\theta L + \sum_i F_i^\theta ( l_i - L )
   \end{cases}
-\end{align}
+\end{align*}
 となる。
 
 
@@ -564,7 +568,7 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
 \end{figure}
 
 重心速度$\vec{V}$は
-\begin{align}
+\begin{align*}
   \vec{V} &= 
   \dot{L}
   \begin{pmatrix}
@@ -602,25 +606,25 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
     \\
     \cos\theta
   \end{pmatrix}
-\end{align}
+\end{align*}
 
 
 力学的エネルギー$T$は
 剛体の質量$M$、重心周りの慣性モーメント$I_G$、角度$\theta$、重心までの距離$L$を用いて
-\begin{align}
+\begin{align*}
   T = 
   \frac{1}{2}I_G\omega^2
   + \frac{1}{2}M
   \Bigl[ (\dot{L} - x_\theta \omega)^2 + (L\omega + v_\theta)^2 \Bigr]
-\end{align}
+\end{align*}
 で表される。
 位置エネルギー$U$は
-\begin{align}
+\begin{align*}
   U = Mg ( L\sin\theta + x_\theta \cos\theta )
-\end{align}
+\end{align*}
 で表される。
 これによってラグランジアン$Lag$は
-\begin{align}
+\begin{align*}
   Lag &=
   T - U
   \\
@@ -629,7 +633,7 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
   + \frac{1}{2}M
   \Bigl[ (\dot{L} - x_\theta \omega)^2 + (L\omega + v_\theta)^2 \Bigr]
   - Mg ( L\sin\theta + x_\theta \cos\theta )
-\end{align}
+\end{align*}
 と表される。
 
 \subsubsection*{回転の運動方程式}
@@ -640,12 +644,12 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
 \end{align}
 と表現される。
 ただし$Q_\theta$は回転に関する一般化力で、トルクに相当し、
-\begin{align}
+\begin{align*}
   Q_\theta = \sum_i F_i^\theta l_i
-\end{align}
+\end{align*}
 が成り立つ。
 また、ラグランジュ方程式の各項が
-\begin{align}
+\begin{align*}
   \frac{d}{dt}\frac{\partial Lag}{\partial \omega}
   &= \frac{d}{dt}\frac{\partial }{\partial \omega}
   \left(
@@ -662,8 +666,8 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
   &= I_G\dot\omega + ML^2\dot\omega
   \\
   &= (I_G + ML^2)\dot\omega
-\end{align}
-\begin{align}
+\end{align*}
+\begin{align*}
   \frac{\partial Lag}{\partial \theta}
   &= \frac{\partial }{\partial \theta}
   \left(
@@ -678,14 +682,16 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
   & \ \ \ \ \left( \because x_\theta = 0 \right)
   \\
   &= -MgL\cos\theta
-\end{align}
+\end{align*}
 のように計算される。
 よって式\ref{eq:lag:theta_start}は
 \begin{align}
   & (ML^2 + I_G)\dot\omega - ( -MgL\cos\theta ) = \sum_i F_i^\theta l_i
+  \notag
   \\
   \Leftrightarrow
   & (ML^2 + I_G)\dot\omega = -MgL\cos\theta + \sum_i F_i^\theta l_i
+  \notag
   \\
   \Leftrightarrow
   & I\dot\omega = -MgL\cos\theta + \sum_i F_i^\theta l_i
@@ -703,12 +709,12 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
 \end{align}
 と表現される。
 ただし$Q_L$は動径方向に関する一般化力で、原点が広がる力を正にとったものに相当し、
-\begin{align}
+\begin{align*}
   Q_L = -F_L +  \sum_i F_i^L
-\end{align}
+\end{align*}
 が成り立つ。
 また、ラグランジュ方程式の各項が
-\begin{align}
+\begin{align*}
   \frac{d}{dt}\frac{\partial Lag}{\partial \dot{L}}
   &= \frac{d}{dt}\frac{\partial }{\partial \dot{L}}
   \left(
@@ -725,8 +731,8 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
   & \ \ \ \ \left( \because x_\theta = 0 \right)
   \\
   &= M \ddot{L}
-\end{align}
-\begin{align}
+\end{align*}
+\begin{align*}
   \frac{\partial Lag}{\partial L}
   &= \frac{\partial }{\partial L}
   \left(
@@ -741,16 +747,17 @@ $L=L(t)$、$x_\theta=x_\theta(t)$であるような状況
   & \ \ \ \ \left( \because x_\theta = 0 \right)
   \\
   &= ML\omega^2 - Mg\sin\theta
-\end{align}
+\end{align*}
 のように計算される。
 よって式\ref{eq:lag:length_start}は
-\begin{align}
+\begin{align*}
   M\ddot{L} - ( ML\omega^2 - MgL\sin\theta ) = -F_L + \sum_i F_i^L
-\end{align}
+\end{align*}
 となる。
 ここで剛体という条件から$\ddot{L} = 0$を代入すると
 \begin{align}
   & 0 - ( ML\omega^2 - MgL\sin\theta ) = -F_L + \sum_i F_i^L
+  \notag
   \\
   \Leftrightarrow
   & ML\omega^2 = F_L + MgL\sin\theta - \sum_i F_i^L
@@ -763,18 +770,17 @@ $\sum_i F_i^L$に吸収してもよい。
 
 \subsubsection*{回転方向の並進運動方程式}
 ラグランジュ方程式は
-\begin{align}
+\begin{align*}
   \frac{d}{dt}\frac{\partial Lag}{\partial v_\theta} - \frac{\partial Lag}{\partial x_\theta} = Q_{F_\theta}
-  \label{eq:lag:Ftheta_start}
-\end{align}
+\end{align*}
 と表現される。
 ただし$Q_L$は回転方向に関する一般化力で、その時点での回転方向への力に相当し、
-\begin{align}
+\begin{align*}
   Q_{F_\theta} = F_\theta + \sum_i F_i^\theta
-\end{align}
+\end{align*}
 が成り立つ。
 また、ラグランジュ方程式の各項が
-\begin{align}
+\begin{align*}
   \frac{d}{dt}\frac{\partial Lag}{\partial v_\theta}
   &= \frac{d}{dt}\frac{\partial }{\partial v_\theta}
   \left(
@@ -791,8 +797,8 @@ $\sum_i F_i^L$に吸収してもよい。
   & \ \ \ \ \left( \because x_\theta = 0, L = const. \right)
   \\
   &= M L \dot\omega
-\end{align}
-\begin{align}
+\end{align*}
+\begin{align*}
   \frac{\partial Lag}{\partial x_\theta}
   &= \frac{\partial }{\partial x_\theta}
   \left(
@@ -805,14 +811,16 @@ $\sum_i F_i^L$に吸収してもよい。
   &= 0 - Mg\cos\theta
   \\
   &= - Mg\cos\theta
-\end{align}
+\end{align*}
 のように計算される。
 よって式\ref{eq:lag:length_start}は
 \begin{align}
   & M L \dot\omega - ( - Mg\cos\theta ) = F_\theta + \sum_i F_i^\theta
+  \notag
   \\
   \Leftrightarrow
   & M L \dot\omega = - Mg \cos\theta + F_\theta + \sum_i F_i^\theta
+  \notag
   \\
   \Rightarrow
   & M L^2 \dot\omega = - Mg L \cos\theta + F_\theta L + \sum_i F_i^\theta L
@@ -820,7 +828,7 @@ $\sum_i F_i^L$に吸収してもよい。
 \end{align}
 となる。
 ここで式\ref{eq:lag:theta_end}を変形する。
-\begin{align}
+\begin{align*}
   I\dot\omega 
   &= -MgL\cos\theta + \sum_i F_i^\theta l_i
   \\
@@ -829,29 +837,33 @@ $\sum_i F_i^L$に吸収してもよい。
   \Leftrightarrow
   \sum_i F_i^\theta L
   &= I\dot\omega + MgL\cos\theta - \sum_i F_i^\theta (l_1 - L)
-\end{align}
+\end{align*}
 よって式\ref{eq:lag:x_middle}は
 \begin{align}
   & M L^2 \dot\omega = - Mg L \cos\theta + F_\theta L + \sum_i F_i^\theta L
+  \notag
   \\
-  \Leftrightarrow
-  & M L^2 \dot\omega = - Mg L \cos\theta + F_\theta L + I\dot\omega + MgL\cos\theta - \sum_i F_i^\theta (l_1 - L)
+  & \Leftrightarrow
+  M L^2 \dot\omega = - Mg L \cos\theta + F_\theta L + I\dot\omega + MgL\cos\theta - \sum_i F_i^\theta (l_1 - L)
+  \notag
   \\
-  \Leftrightarrow
-  & ( M L^2 - I ) \dot\omega = F_\theta L - \sum_i F_i^\theta (l_1 - L)
+  & \Leftrightarrow
+  ( M L^2 - I ) \dot\omega = F_\theta L - \sum_i F_i^\theta (l_1 - L)
+  \notag
   \\
-  \Leftrightarrow
-  & -I_G \dot\omega = F_\theta L - \sum_i F_i^\theta (l_1 - L)
+  & \Leftrightarrow
+  -I_G \dot\omega = F_\theta L - \sum_i F_i^\theta (l_1 - L)
+  \notag
   \\
-  \Leftrightarrow
-  & I_G \dot\omega = - F_\theta L + \sum_i F_i^\theta (l_1 - L)
+  & \Leftrightarrow
+  I_G \dot\omega = - F_\theta L + \sum_i F_i^\theta (l_1 - L)
   \label{eq:lag:Ftheta_end}
 \end{align}
 と変形され、$F_\theta$に関する方程式を得た。
 
 よってまとめると、
 式\ref{eq:lag:theta_end}, \ref{eq:lag:length_end}, \ref{eq:lag:Ftheta_end}より
-\begin{align}
+\begin{align*}
   \begin{cases}
     ML\omega^2 &= F_L + MgL\sin\theta - \sum_i F_i^L
     \\
@@ -859,7 +871,7 @@ $\sum_i F_i^L$に吸収してもよい。
     \\
     I_G\dot\omega &= -F_\theta L + \sum_i F_i^\theta ( l_i - L )
   \end{cases}.
-\end{align}
+\end{align*}
 
 \clearpage
 \subsubsection{ニュートン力学での導出}
@@ -867,27 +879,27 @@ $\sum_i F_i^L$に吸収してもよい。
 
 回転軸からの距離$l$に対して質量密度を$m=m(l)$で与える。
 この時
-\begin{align}
+\begin{align*}
   \int m dl = M, \ \ \ \ \ \
   \frac{\int ml dl}{\int m dl} = L, \ \ \ \ \ \
   \int ml^2 dl = I
-\end{align}
+\end{align*}
 である。
 回転軸からの距離$l$にある質量$m$に関して、
 動径方向の力を$f_l=f_l(l)$、
 回転方向の力を$f_\theta=f_\theta(l)$
 として運動方程式を考えると
-\begin{align}
+\begin{align*}
   \begin{cases}
     f_l = -ml\omega^2
     \\
     f_\theta = ml\dot\omega
   \end{cases}
-\end{align}
+\end{align*}
 となる。
 
 動径方向の力に関して回転軸からの距離$l$で積分すると
-\begin{align}
+\begin{align*}
   \int f_l dl 
   &= \int -ml\omega^2 dl
   \\
@@ -898,17 +910,18 @@ $\sum_i F_i^L$に吸収してもよい。
   &= -\omega^2 M \cdot L
   \\
   &= -ML\omega^2
-\end{align}
+\end{align*}
 が分かる。
 微小質点にかかる剛体方向の力を積分した左辺が
 外力の合計に等しいことから、
-\begin{align}
+\begin{align*}
   \int f_l dl = -F_L + \sum_i F_i^{L}
-\end{align}
+\end{align*}
 を考えるのは自然であろう。
 よって動径方向の運動方程式は
 \begin{align}
   & -F_L + \sum_i F_i^{L} = -ML\omega^2
+  \notag
   \\
   \Leftrightarrow
   & ML\omega^2 = F_L - \sum_i F_i^{L}
@@ -929,25 +942,25 @@ $\sum_i F_i^L$に吸収してもよい。
 
 回転軸周りの慣性モーメント$I$を式中に登場させるために、
 \ref{eq:newton:theta_start}の両辺に回転軸からの距離$l$をかけて、積分する。
-\begin{align}
+\begin{align*}
   \int f_\theta^{in} l dl + \int f_\theta^{out} l dl
   &= \int ml^2\dot\omega dl
   \\
   &= \dot\omega\int ml^2 dl
   \\
   &= \dot\omega I = I\dot\omega
-\end{align}
+\end{align*}
 
 ここで、内力が角運動量を変化させないことから(この部分が特に定かではない)
-\begin{align}
+\begin{align*}
   \int f_\theta^{in} l dl = 0
-\end{align}
+\end{align*}
 となる。
 これは、そのような$f_\theta^{in}$が発生すると考えたほうが分かりやすい。
 この式から
-\begin{align}
+\begin{align*}
   f_\theta^{in} = 0
-\end{align}
+\end{align*}
 を導くことは数学的に間違っていることは簡単に分かり、
 そして物理的な解釈からも否定される。
 というのも、片端が固定された棒の反対の端を指で動かす場合を考える。
@@ -961,9 +974,9 @@ $\sum_i F_i^L$に吸収してもよい。
 筆者はこの外力について考えるとき、
 外力による合計のトルクに関して
 外力の回転方向成分を合計した力$F_\theta^G$に対して
-\begin{align}
+\begin{align*}
   \int f_\theta^{out} l dl = F_\theta^G L
-\end{align}
+\end{align*}
 であるはずという観念があり、
 大変苦労した。
 これは簡単に否定されるので、
@@ -971,29 +984,29 @@ $\sum_i F_i^L$に吸収してもよい。
 質量$m_0$である質点を、回転軸から$l_1, l_2$の部分に置く。
 それぞれの質点に回転方向への成分が$F_1, F_2$である外力を作用させる。
 回転軸周りの合計トルクは
-\begin{align}
+\begin{align*}
   F_1 l_1 + F_2 l_2
   \neq
   (F_1 + F_2) \frac{l_1 + l_2}{2}
-\end{align}
+\end{align*}
 である。
 これによって
-\begin{align}
+\begin{align*}
   \int f_\theta^{out} l dl \neq F_\theta^G L
-\end{align}
+\end{align*}
 が証明された。
 
 しかし、
-\begin{align}
+\begin{align*}
   \int f_\theta^{out} l dl = F_\theta^G L
-\end{align}
+\end{align*}
 が成り立つような外力が存在する。
 それは質量に比例する力である。
 重力や慣性力がその例となる。
 厳密には各質点に同じ大きさでかかる力も満たすが、
 今回は考えない。
 比例定数を$A_f$とすると、
-\begin{align}
+\begin{align*}
   \int f_\theta^{out} l dl
   &= \int A_f m l dl
   \\
@@ -1002,29 +1015,29 @@ $\sum_i F_i^L$に吸収してもよい。
   &= A_f \int m dl \frac{\int mldl}{\int mdl}
   \\
   &= A_f M L
-\end{align}
+\end{align*}
 また、外力の回転方向成分の合計である$F_\theta^G$は
-\begin{align}
+\begin{align*}
   F_\theta^G
   = \int f_\theta^{out} dl
   = \int A_f m dl
   = A_f \int mdl
   = A_f M
-\end{align}
+\end{align*}
 であるから、
-\begin{align}
+\begin{align*}
   \int f_\theta^{out} l dl = F_\theta^G L
-\end{align}
+\end{align*}
 が成り立つ。
 よって回転方向の運動方程式は
-\begin{align}
+\begin{align*}
   I\dot\omega 
   &= \int f_\theta^{out} l dl
   \\
   & \ \ \left( \mathrm{特に各質点に質量に比例してかかる力だけの場合は} \right)
   \\
   &= F_\theta^G L
-\end{align}
+\end{align*}
 となる。
 重力や添え字$i$で関連付けられた外力を具体的に考慮すると、
 \begin{align}
@@ -1033,6 +1046,7 @@ $\sum_i F_i^L$に吸収してもよい。
   \\
   \Rightarrow
   & \int f_\theta^{out} l dl = -MgL \cos\theta + \sum_i F_i^\theta l_i
+  \notag
 \end{align}
 であるから、
 \begin{align}
@@ -1046,7 +1060,7 @@ $\sum_i F_i^L$に吸収してもよい。
 
 最後に、$F_\theta$に関する運動方程式を導出する。
 式\ref{eq:newton:theta_end}から
-\begin{align}
+\begin{align*}
   I\dot\omega 
   &= \int_0^\infty f_\theta^{out} l dl
   \\
@@ -1058,17 +1072,20 @@ $\sum_i F_i^L$に吸収してもよい。
   \\
   &= \int_0^\infty f_\theta^{out} ( l - L ) dl
   + L \cdot ( ML\dot\omega) 
-\end{align}
+\end{align*}
 具体的に式\ref{eq:newton:f_theta_out_conf}により重力と外力を考慮すると
 \begin{align}
   I\dot\omega
   &= \int_0^\infty f_\theta^{out} ( l - L ) dl
   + L \cdot ( ML\dot\omega) 
+  \notag
   \\
   &= Mg(L - L) \cos\theta + F_\theta ( 0 - L ) + \sum_i F_i^\theta ( l_1 - L ) + ML^2\dot\omega
+  \notag
   \\
   & \Leftrightarrow
   ( I - ML^2 ) \dot\omega = - F_\theta L + \sum_i F_i^\theta ( l_1 - L )
+  \notag
   \\
   & \Leftrightarrow
   I_G \dot\omega = - F_\theta L + \sum_i F_i^\theta ( l_1 - L )
@@ -1078,7 +1095,7 @@ $\sum_i F_i^L$に吸収してもよい。
 よってまとめると、
 式\ref{eq:newton:length_end},\ref{eq:newton:theta_end},\ref{eq:newton:Ftheta_end}
 により
-\begin{align}
+\begin{align*}
   \begin{cases}
     ML\omega^2 &= F_L - \sum_i F_i^{L}
     \\
@@ -1086,7 +1103,7 @@ $\sum_i F_i^L$に吸収してもよい。
     \\
     I_G \dot\omega &= - F_\theta L + \sum_i F_i^\theta ( l_1 - L )
   \end{cases}
-\end{align}
+\end{align*}
 
 
 \end{document}
