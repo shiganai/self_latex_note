@@ -34,7 +34,6 @@
 \date{\today}
 \maketitle
 
-\section{上肢と胴体が一致する角度が持つ力学的重要な意味について}
 
 上肢が全身の質量に対して十分に軽いとし、
 上肢の質量と慣性モーメントを$0$とするモデルを考える。
@@ -49,7 +48,7 @@
   \label{config.png}
 \end{figure}
 
-\subsection{上肢の運動の決まり方}
+\section{上肢の質量を無視する効果}
 
 上肢の慣性がなくなり、
 0でない外力が働くと加速度が定義できなくなってしまうこのモデルに関して
@@ -109,6 +108,8 @@ $\vec{F}_W$と$-\vec{F}_S$は
 このことから、上肢には上肢と同じ方向に力がかかるが、
 垂直な方向には力が加わらないことが分かる。
 これではまだ上肢の加速度を決定することはできない。
+
+\section{運動方程式}
 
 そして次に考えるのが、
 肩関節以降の剛体単振り子である。
@@ -172,7 +173,10 @@ $\vec{F}_W$と$-\vec{F}_S$は
   \label{eq:PB:IG_start}
 \end{align}
 となる。
-まず式\ref{eq:PB:I_start}, \ref{eq:PB:IG_start}によって
+
+\subsection{胴体・下肢の合成剛体と上肢の位置関係と上肢の加速方向}
+
+式\ref{eq:PB:I_start}, \ref{eq:PB:IG_start}から
 \begin{align}
   & F_S \cdot L_{S\rightarrow BL} \sin\theta_{S\rightarrow BL}
   = \frac{I_{BL}}{I_{S\rightarrow BL}}
@@ -226,7 +230,7 @@ $\vec{F}_W$と$-\vec{F}_S$は
   +Mr_{Arm}\ddot{\theta}_W \frac{I_{BL}}{I_{S\rightarrow BL}}\cos\theta_{S\rightarrow BL}
   \notag
   \\
-  & \qquad \qquad \qquad \qquad \qquad \qquad + Mr_{Arm}\dot{\theta}_W{}^2 \frac{I_{BL}}{I_{S\rightarrow BL}}\sin\theta_{S\rightarrow BL}
+  & \qquad \qquad \qquad \qquad \qquad \qquad + Mr_{Arm}\dot{\theta}_W{}^2 \frac{I_{BL}}{I_{S\rightarrow BL}}\sin\theta_{S\rightarrow BL}.
   \label{eq:PB:Fs_sin}
 \end{align}
 式\ref{eq:PB:L_start}に$\sin\theta_{S\rightarrow BL}$をかけ、
@@ -253,8 +257,9 @@ $F_S$の項を打ち消す。
 \end{align*}
 この2式から
 \begin{align*}
-  ML_{S\rightarrow BL}\Omega_{S\rightarrow BL}{}^2 \sin\theta_{S\rightarrow BL}
-  &= Mg\left( \sin\Theta_{S\rightarrow BL} \sin\theta_{S\rightarrow BL} + \frac{I_{BL}}{I_{S\rightarrow BL}}\cos\Theta_{S\rightarrow BL} \cos\theta_{S\rightarrow BL} \right)
+  ML_{S\rightarrow BL}\Omega_{S\rightarrow BL}{}^2 & \sin\theta_{S\rightarrow BL}
+  \\
+  & = Mg\left( \sin\Theta_{S\rightarrow BL} \sin\theta_{S\rightarrow BL} + \frac{I_{BL}}{I_{S\rightarrow BL}}\cos\Theta_{S\rightarrow BL} \cos\theta_{S\rightarrow BL} \right)
   \\
   & \qquad + Mr_{Arm}\ddot{\theta}_W\left( \sin^2\theta_{S\rightarrow BL} + \frac{I_{BL}}{I_{S\rightarrow BL}}\cos^2\theta_{S\rightarrow BL} \right)
   \\
@@ -279,8 +284,6 @@ $F_S$の項を打ち消す。
 が分かる。
 $\sin^2\theta_{S\rightarrow BL} + \frac{I_{BL}}{I_{S\rightarrow BL}}\cos^2\theta_{S\rightarrow BL} > 0$であるから、
 $a_{Arm}$の符号は右辺で決まることになる。
-
-\subsection{胴体と上肢の位置関係と上肢の加速方向}
 
 上肢の加速を表す式\ref{eq:PB:a_arm_end}について
 具体的な状況
@@ -307,16 +310,16 @@ $a_{Arm}$の符号は右辺で決まることになる。
   $0<\theta_{S\rightarrow BL}<\pi$の時であり、
   つまり
   図\ref{PN_omega_positive.png}のような
-  胴体が上肢より左側にある状況であり、
-  上肢の角度や胴体の角度に依らない。
+  胴体・下肢の合成剛体が上肢より左側にある状況であり、
+  上肢の角度や胴体・下肢の合成剛体の角度に依らない。
   逆に上肢が負の方向に加速するのは
   $\pi<\theta_{S\rightarrow BL}<2\pi$の時であり、
   つまり
   図\ref{PN_omega_negative.png}のような
-  胴体が上肢より右側にある状況であり、
-  上肢の角度や胴体の角度に依らない。
+  胴体・下肢の合成剛体が上肢より右側にある状況であり、
+  上肢の角度や胴体・下肢の合成剛体の角度に依らない。
   これはまるで向心力ないし遠心力によって
-  上肢が胴体のある方向に引っ張られていることを想起する。
+  上肢が胴体・下肢の合成剛体のある方向に引っ張られていることを想起する。
 
   \begin{figure}[h]
     \begin{tabular}{cc}
@@ -377,14 +380,14 @@ $a_{Arm}$の符号は右辺で決まることになる。
 %         \label{PN_horizontal_negative.png}
 %       \end{minipage}
 %     \end{tabular}
-%     \caption{胴体が水平のとき}
+%     \caption{胴体・下肢の合成剛体が水平のとき}
 %   \end{figure}
 \end{enumerate}
 
-\subsection{胴体と上肢の位置関係と角運動量}
-式\ref{eq:PB:L_start}~\ref{eq:PB:IG_start}から
+\subsection{胴体・下肢の合成剛体と上肢の位置関係と角運動量}
+式\ref{eq:PB:L_start}--\ref{eq:PB:IG_start}から
 $F_S$を決定する。
-式\ref{eq:PB:I_start},\ref{eq:PB:IG_start}により
+式\ref{eq:PB:I_start}, \ref{eq:PB:IG_start}により
 \begin{align}
   \frac{I_{S\rightarrow BL}}{I_{BL}}F_S\sin\theta_{S\rightarrow BL} \cdot L_{S\rightarrow BL} 
   &= -Mg \cdot L_{S\rightarrow BL}\cos\Theta_{S\rightarrow BL}
@@ -473,16 +476,11 @@ $\ddot\theta_{W}$の項を打ち消す。
 が分かる。
 
 $F_S$の正負は
-式\ref{eq:PB:FS_end}からは簡単に推定されない。
-なぜなら、
-データ的に$F_S$は大体正なのだが(*要データ確認)、
-どちらかの方が十分に大きいという近似は、
-正であることを保証しない。
-大体正であるためには、
-$-ML_{S\rightarrow BL}\Omega_{S\rightarrow BL}{}^2\cos\theta_{S\rightarrow BL} < 0$であるうちは
-$Mg\sin(\theta_W + \frac{1}{2}\pi) ( > 0 \because -\frac{1}{2}\pi < \theta_W < \frac{1}{2}\pi )$
-が大きい必要がある。
-
+$\left( \cos^2\theta_{S\rightarrow BL} + \frac{I_{S\rightarrow BL}}{I_{BL}}\sin^2\theta_{S\rightarrow BL} \right) > 0$
+であるため、
+右辺の正負から決まるが、
+右辺の正負は式からだけでは判断できない。
+なので
 ここから先は
 $F_S$は大体正であることを前提とする。(だから間違っている可能性がある)
 
@@ -495,51 +493,51 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
 角運動量を増加する。
 逆に、正の$F_S$は$\pi < \theta_{S\rightarrow BL} < 2\pi$のときは
 角運動量を減少させる。
-つまり、上肢と胴体の角度が重なるときを境に、
+つまり、上肢と胴体・下肢の合成剛体の角度が重なるときを境に、
 正の$F_S$による角運動量の増減は入れ替わる。
 より長い間$0 < \theta_{S\rightarrow BL} < \pi$、
-つまり胴体が上肢より左側にある状態を保ったほうが
+つまり胴体・下肢の合成剛体が上肢より左側にある状態を保ったほうが
 角運動量は増加する。
 
-\subsection{胴体と上肢の位置関係と鉛直反力}
-肩関節で胴体に対して鉛直方向に働く力の大きさは
+\subsection{胴体・下肢の合成剛体と上肢の位置関係と鉛直反力}
+肩関節で胴体・下肢の合成剛体に対して働く力$\vec{F}_S$の鉛直方向成分$F_{S}^\uparrow$の大きさは
 \begin{align*}
-  F_s\sin(\theta_W + \frac{1}{2}\pi)
+  F_{S}^\uparrow = \left|\vec{F}_s\right|\sin\Theta_W
 \end{align*}
 である。
-上肢がより鉛直の時ほど、ある$F_S$に対しては大きな鉛直反力が発生することになる。
+上肢がより鉛直の時ほど、ある$\vec{F}_S$に対しては大きな$F_{S}^\uparrow$が発生することになる。
 
 だから鉛直反力を大きくして滞空時間を大きくするには
 上肢を鉛直に保つことが必要になる。
 大抵平行棒の支持スイングにおいては
 上肢の角度は鉛直をまたぐ。
 逆にまたがないような動作はパフォーマンスが高くない(*要データ確認)。
-前半は上肢が鉛直より右側にあり、胴体は上肢より左側にあることが多く、
-そして後半は上肢が鉛直より左側にあり、胴体は上肢より右側にあることが多い。
-胴体が上肢より左側にある時は上肢が正の方向に加速し、
-胴体が上肢より右側にある時は上肢が負の方向に加速することはすでに述べた。
+前半は上肢が鉛直より右側にあり、胴体・下肢の合成剛体は上肢より左側にあることが多く、
+そして後半は上肢が鉛直より左側にあり、胴体・下肢の合成剛体は上肢より右側にあることが多い。
+胴体・下肢の合成剛体が上肢より左側にある時は上肢が正の方向に加速し、
+胴体・下肢の合成剛体が上肢より右側にある時は上肢が負の方向に加速することはすでに述べた。
 これにより、
-胴体が上肢との位置関係を入れ替えるタイミングが
+胴体・下肢の合成剛体が上肢との位置関係を入れ替えるタイミングが
 上肢の左右への傾きへ大きな影響を及ぼすことが予想され、
 その中でもより上肢を鉛直に保つような動作がパフォーマンスが高くなることが予想される。
 
-\subsection{胴体と上肢の位置関係と回転数}
+\subsection{胴体・下肢の合成剛体と上肢の位置関係と回転数}
 これまでの議論により
 \begin{enumerate}
-  \item 胴体と上肢の位置関係により角運動量の増減が決まる
+  \item 胴体・下肢の合成剛体と上肢の位置関係により角運動量の増減が決まる
   
-  胴体が上肢より左側にある時は角運動量が増加し、
-  胴体が上肢より右側にある時は角運動量が減少する。
-  \item 胴体と上肢の位置関係により上肢の角度が決まり、鉛直反力が決まる
+  胴体・下肢の合成剛体が上肢より左側にある時は角運動量が増加し、
+  胴体・下肢の合成剛体が上肢より右側にある時は角運動量が減少する。
+  \item 胴体・下肢の合成剛体と上肢の位置関係により上肢の角度が決まり、鉛直反力が決まる
   
-  胴体が上肢より左側にある時は上肢は左に傾き、
-  胴体が上肢より右側にある時は上肢は右に傾く。
+  胴体・下肢の合成剛体が上肢より左側にある時は上肢は左に傾き、
+  胴体・下肢の合成剛体が上肢より右側にある時は上肢は右に傾く。
   上肢がより鉛直に保たれるほど鉛直反力が大きくなる。
 \end{enumerate}
 ことが分かった。
 このことから、
 \begin{itemize}
-  \item 胴体が上肢より左側にある状況を保ったほうが角運動量は大きくなりやすいが、
+  \item 胴体・下肢の合成剛体が上肢より左側にある状況を保ったほうが角運動量は大きくなりやすいが、
   上肢が左に傾きすぎて鉛直反力が小さくなってしまう可能性がある。
 
   $\Rightarrow$ 角運動量を大きくするか、それとも鉛直反力を大きくするかにはバランスがある。
@@ -548,7 +546,7 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
 そして
 「角運動量を大きくするか、それとも鉛直反力を大きくするかのバランス」の指標として
 上肢の加速方向の正負や角運動量の増減を切り替える
-「胴体と上肢が重なるときの上肢の角度」(式\ref{eq:PB:a_arm_MLw2}, \ref{eq:PB:IG_start})
+「胴体・下肢の合成剛体と上肢が重なるときの上肢の角度」(式\ref{eq:PB:a_arm_MLw2}, \ref{eq:PB:IG_start})
 が適していることが
 シミュレーションから分かっている。
 
@@ -567,7 +565,7 @@ $F_S$は大体正であることを前提とする。(だから間違ってい�
       \label{1seg_circle_model_theta_at_match.png}
     \end{minipage}
   \end{tabular}
-  \caption{回転数と「胴体と上肢が重なるときの上肢の角度」の関係}
+  \caption{回転数と「胴体・下肢の合成剛体と上肢が重なるときの上肢の角度」の関係}
 \end{figure}
 
 
