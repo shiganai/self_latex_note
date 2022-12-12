@@ -53,11 +53,11 @@
 
 図\ref{config.png}のような状況で、剛体振り子が回転軸から離れる状況を考える。
 ただし、回転軸から離れた後は図\ref{length_after_takeoff.png}のように、
-離軸前の振り子の長さ($l^L, l^S$)によらず、$l^{Air}$に変化する。
+離軸前の振り子の長さ($\ell^L, \ell^S$)によらず、$\ell^{Air}$に変化する。
 これは平行棒の後方宙返りにおいて、離手後に同じ姿勢をとる状況を再現するためである。
 
 今回は、質量が一定に保たれ、密度が一様な剛体振り子を考えるが、
-力学的エネルギーを長さ$l$によらず一定に保つために、
+力学的エネルギーを長さ$\ell$によらず一定に保つために、
 水平$\theta = 0$から振り出すことを考える。
 
 \section{"単振り子は長いほうが高い回転数を実現する"の証明}
@@ -69,41 +69,41 @@
 だけであることによる。
 
 エネルギーの保存則より
-\begin{align}
+\begin{align*}
   0 
-  &= \frac{1}{2} m \Big\{ (l\omega\sin\theta)^2 + (-l\omega\cos\theta)^2  \Big\}
-  + \frac{1}{2} \cdot \frac{1}{3} ml^2 \cdot \omega^2
-  + mg (-l \sin\theta )
+  &= \frac{1}{2} m \Big\{ (\ell\omega\sin\theta)^2 + (-\ell\omega\cos\theta)^2  \Big\}
+  + \frac{1}{2} \cdot \frac{1}{3} m\ell^2 \cdot \omega^2
+  + mg (-\ell \sin\theta )
   \\
-  &= \frac{1}{2}ml^2\omega^2 + \frac{1}{6}ml^2\omega^2 + mg (-l\sin\theta)
+  &= \frac{1}{2}m\ell^2\omega^2 + \frac{1}{6}m\ell^2\omega^2 + mg (-\ell\sin\theta)
   \\
-  &= \frac{2}{3}ml^2\omega^2 + mg (-l\sin\theta)
-\end{align}
+  &= \frac{2}{3}m\ell^2\omega^2 + mg (-\ell\sin\theta)
+\end{align*}
 これにより
-\begin{align}
-  \omega^2 &= \frac{3}{2ml^2}mgl\sin\theta = \frac{3g}{2l}\sin\theta,
+\begin{align*}
+  \omega^2 &= \frac{3}{2m\ell^2}mg\ell\sin\theta = \frac{3g}{2\ell}\sin\theta,
   \\
   \therefore
-  \omega &= \sqrt{ \frac{3g}{2l}\sin\theta }
-\end{align}
+  \omega &= \sqrt{ \frac{3g}{2\ell}\sin\theta }
+\end{align*}
 が求まる。
 空中での回転速度を$\Omega$とすると
-\begin{align}
+\begin{gather}
   I\Omega 
-  &= \frac{1}{3}ml^2\omega
-  = \frac{1}{3}ml^2 \sqrt{ \frac{3g}{2l}\sin\theta }
-  = \sqrt{ \frac{m^2 g}{6} l^3 \sin\theta }
-\end{align}
-\begin{align}
+  = \frac{1}{3}m\ell^2\omega
+  = \frac{1}{3}m\ell^2 \sqrt{ \frac{3g}{2\ell}\sin\theta }
+  = \sqrt{ \frac{m^2 g}{6} \ell^3 \sin\theta }
+  \notag
+  \\
   \therefore \Omega
-  &= \frac{1}{I} \sqrt{ \frac{m^2 g}{6} l^3 \sin\theta }
+  = \frac{1}{I} \sqrt{ \frac{m^2 g}{6} \ell^3 \sin\theta }
   \label{eq:Omega}
-\end{align}
+\end{gather}
 
 ところで、回転数$N_r$は滞空時間$T_{air}$、空中での回転速度$\Omega$を用いて
-\begin{align}
+\begin{align*}
   N_r = \Big( \theta + T_{air} \cdot \Omega \Big) / 2\pi
-\end{align}
+\end{align*}
 で表される。
 "単振り子は長いほうが高い回転数を実現する"
 ことを証明するには
@@ -117,7 +117,7 @@ $T_{air}$が長さに対して単調増加することを示せばよいが、
 しかし、
 離軸後の最高到達点の高さが一定である場合、
 $\theta, T_{air}, \Omega$が
-長さ$l$に対して単調増加することが示せる。
+長さ$\ell$に対して単調増加することが示せる。
 
 離軸後の最高到達点の高さが一定であるような条件は
 鉛直方向のエネルギー保存を考えると簡単に表される。
@@ -126,34 +126,42 @@ $\theta, T_{air}, \Omega$が
 $h\leq0$が成り立つ。
 \begin{align}
   mgh 
-  &= \frac{1}{2}m (-l \omega \cos \theta)^2 + mg (-l \sin \theta)
+  &= \frac{1}{2}m (-\ell \omega \cos \theta)^2 + mg (-\ell \sin \theta)
   \label{eq:energy_vertical}
   \\
-  &= \frac{1}{2}ml^2 \omega^2 \cos^2 \theta + mg (-l \sin \theta)
+  &= \frac{1}{2}m\ell^2 \omega^2 \cos^2 \theta + mg (-\ell \sin \theta)
+  \notag
   \\
-  & \ \ \left( \because \omega^2 = \frac{3g}{2l}\sin\theta \right) \notag
+  & \ \ \left( \because \omega^2 = \frac{3g}{2\ell}\sin\theta \right) \notag
   \\
-  &= \frac{1}{2}ml^2 \cos^2 \theta \cdot \frac{3g}{2l}\sin\theta + mg (-l \sin \theta)
+  &= \frac{1}{2}m\ell^2 \cos^2 \theta \cdot \frac{3g}{2\ell}\sin\theta + mg (-\ell \sin \theta)
+  \notag
   \\
-  &= \frac{3mgl}{4}\sin\theta \cos^2\theta + mg (-l\sin\theta)
+  &= \frac{3mg\ell}{4}\sin\theta \cos^2\theta + mg (-\ell\sin\theta)
+  \notag
   \\
-  &= mgl\cos\theta \left( \frac{3}{4}\cos^2\theta - 1\right)
+  &= mg\ell\cos\theta \left( \frac{3}{4}\cos^2\theta - 1\right)
+  \notag
   \\
-  & \ \ \left( \because \cos^2\theta = 1 - \sin^2\theta \right) \notag
+  & \ \ \left( \because \cos^2\theta = 1 - \sin^2\theta \right)
+  \notag
   \\
-  &= mgl\sin\theta \left( \frac{3}{4} - \frac{3}{4}\sin^2\theta - 1 \right)
+  &= mg\ell\sin\theta \left( \frac{3}{4} - \frac{3}{4}\sin^2\theta - 1 \right)
+  \notag
   \\
-  &= mgl\sin\theta \left( - \frac{3}{4}\sin^2\theta - \frac{1}{4} \right)
+  &= mg\ell\sin\theta \left( - \frac{3}{4}\sin^2\theta - \frac{1}{4} \right)
+  \notag
   \\
-  &= -\frac{1}{4}mgl\sin\theta (3\sin^2\theta + 1)
+  &= -\frac{1}{4}mg\ell\sin\theta (3\sin^2\theta + 1)
+  \notag
 \end{align}
-よって長さ$l$と離軸角度に関して以下の式が得られる。
+よって長さ$\ell$と離軸角度に関して以下の式が得られる。
 \begin{align}
-  mgh &= -\frac{1}{4}mgl \sin\theta (3\sin^2\theta + 1)
+  mgh &= -\frac{1}{4}mg\ell \sin\theta (3\sin^2\theta + 1)
   \label{eq:energy_vertical:conclusion}
   \\
   \Leftrightarrow
-  l &= \frac{4(-h)}{\sin\theta (3\sin^2\theta + 1)} \ \ \ \ \Big( > 0, \ \ \because -h > 0, \sin\theta > 0 \Big)
+  \ell &= \frac{4(-h)}{\sin\theta (3\sin^2\theta + 1)} \ \ \ \ \Big( > 0, \ \ \because -h > 0, \sin\theta > 0 \Big)
   \label{eq:l_vs_sin}
 \end{align}
 
@@ -162,12 +170,12 @@ $h\leq0$が成り立つ。
 $\sin\theta (3\sin^2\theta)$ も単調減少する。
 長い剛体振り子に対応する変数Xを$X^L$、
 短い剛体振り子に対応する変数Xを$X^S$と表すと、
-\begin{align}
-  l^S < l^L
-\end{align}
+\begin{align*}
+  \ell^S < \ell^L
+\end{align*}
 であるから、
 式\ref{eq:l_vs_sin}によって
-\begin{align}
+\begin{align*}
   \frac{1}{\sin\theta^S (3\sin^2\theta^S + 1)} &< \frac{1}{\sin\theta^L (3\sin^2\theta^L + 1)}
   \\
   \Leftrightarrow
@@ -178,44 +186,44 @@ $\sin\theta (3\sin^2\theta)$ も単調減少する。
   \\
   \Leftrightarrow
   \theta^S &< \theta^L
-\end{align}
+\end{align*}
 が分かる。
 離軸後の最高到達点の高さが一定であるような条件において
-長さ$l$に対して離軸時の角度$\theta$が単調増加であることが示された。
+長さ$\ell$に対して離軸時の角度$\theta$が単調増加であることが示された。
 
 また、滞空時間$T_{air}$は
-\begin{align}
+\begin{align*}
   T_{air} = (\textrm{離軸から最高高度到達まで}) + (\textrm{最高高度到達以降})
-\end{align}
+\end{align*}
 で表され、
 最高高度到達以降は"離軸後の最高到達点の高さが一定"によって一致するから、
 $T_{air}$の差異は離軸から最高高度到達までにかかる時間によって生じる。
 離軸時の鉛直方向速度$v_y$は
-\begin{align}
-  v_y = l\omega (-\cos\theta) \ \ \ \ \Big( > 0, \ \ \because \cos\theta < 0 \Big)
-\end{align}
+\begin{align*}
+  v_y = \ell\omega (-\cos\theta) \ \ \ \ \Big( > 0, \ \ \because \cos\theta < 0 \Big)
+\end{align*}
 によって現れるが、
 離軸後の最高到達点の高さが一定であるような条件において
-長さ$l$に対して$T_{air}$が単調増加することを証明するのに
+長さ$\ell$に対して$T_{air}$が単調増加することを証明するのに
 特に$\theta, \omega$で表す必要はない。
 鉛直方向に関するエネルギー保存則の式\ref{eq:energy_vertical}を$v_y$で書き換えると
-\begin{align}
-  mgh = \frac{1}{2}m{v_y}^2 + mg (-l \sin\theta)
-\end{align}
-\begin{align}
+\begin{align*}
+  mgh = \frac{1}{2}m{v_y}^2 + mg (-\ell \sin\theta)
+\end{align*}
+\begin{align*}
   \Leftrightarrow
   \frac{1}{2}m{v_y}^2
-  &= mgh + mgl\sin\theta
+  &= mgh + mg\ell\sin\theta
   = mgh + mg\sin\theta\cdot\frac{4(-h)}{\sin\theta(3\sin^2\theta + 1)}
   \\
   &= mg\left\{ h + \frac{4(-h)}{3\sin^2\theta + 1} \right\}
-\end{align}
-\begin{align}
+\end{align*}
+\begin{align*}
   {v_y}^2 = 2g(-h)\left\{ \frac{4}{3\sin^2\theta + 1} - 1 \right\}
-\end{align}
+\end{align*}
 よって
-\begin{align}
-  l^S &< l^L
+\begin{align*}
+  \ell^S &< \ell^L
   \\
   \Leftrightarrow
   \sin\theta^S &> \sin\theta^L
@@ -234,13 +242,13 @@ $T_{air}$の差異は離軸から最高高度到達までにかかる時間に�
   \\
   \Leftrightarrow
   T_{air}^S &< T_{air}^L.
-\end{align}
+\end{align*}
 よって
 離軸後の最高到達点の高さが一定であるような条件において
-長さ$l$に対して滞空時間$T_{air}$が単調増加であることが示された。
+長さ$\ell$に対して滞空時間$T_{air}$が単調増加であることが示された。
 
 離軸後の最高到達点の高さが一定であるような条件において
-長さ$l$に対して離軸時の角度$\theta$と滞空時間$T_{air}$が単調増加であることから、
+長さ$\ell$に対して離軸時の角度$\theta$と滞空時間$T_{air}$が単調増加であることから、
 図\ref{same_max_height.png}が描ける。
 長い振り子のほうが、位置エネルギーをうまく活用している様子が見て取れる。
 
@@ -253,19 +261,19 @@ $T_{air}$の差異は離軸から最高高度到達までにかかる時間に�
 
 最後に空中での回転速度$\Omega$について考える。
 $\Omega$は式\ref{eq:Omega}により
-\begin{align}
+\begin{align*}
   \Omega^2 
-  &= \frac{m^2g}{6I^2}l^3\sin\theta
+  &= \frac{m^2g}{6I^2}\ell^3\sin\theta
   \\
   &= \frac{m^2g}{6I^2}\sin\theta \cdot \frac{64(-h^3)}{\sin^3\theta(3\sin^2\theta+1)^3}
   \\
   &= \frac{m^2g}{6I^2}\cdot \frac{64(-h^3)}{\sin^2\theta(3\sin^2\theta+1)^3}
   \\
   &= \frac{32m^2g (-h^3)}{3I^2}\cdot \frac{1}{\sin^2\theta(3\sin^2\theta+1)^3}
-\end{align}
+\end{align*}
 と表されるから、
-\begin{align}
-  l^S &< l^L
+\begin{align*}
+  \ell^S &< \ell^L
   \\
   \Leftrightarrow
   \sin\theta^S &> \sin\theta^L
@@ -281,39 +289,39 @@ $\Omega$は式\ref{eq:Omega}により
   \\
   \Leftrightarrow
   \Omega^S &< \Omega^L
-\end{align}
+\end{align*}
 よって
 離軸後の最高到達点の高さが一定であるような条件において
-長さ$l$に対して空中での回転速度$\Omega$が単調増加であることが示された。
+長さ$\ell$に対して空中での回転速度$\Omega$が単調増加であることが示された。
 
 これによって
 離軸後の最高到達点の高さが一定であるような条件において
-長さ$l$に対して
+長さ$\ell$に対して
 離軸時の角度$\theta$、
 滞空時間$T_{air}$、
 空中での回転速度$\Omega$
 が単調増加であることが示された。
 
 そして離軸後の最高到達点の高さ$h$は
-最も最下点での離軸した場合の$-l$、
+最も最下点での離軸した場合の$-\ell$、
 水平で離軸した場合の$0$の範囲内であるから、
-\begin{align}
-  -l \leq h \leq 0
-\end{align}
+\begin{align*}
+  -\ell \leq h \leq 0
+\end{align*}
 であり、この範囲内の全ての実数値を実現できる。
-そしてこの範囲は長さ$l$が大きいほど大きく、
-\begin{align}
-  (l^S\textrm{の実現する範囲}) \subset (l^L\textrm{の実現する範囲})
-\end{align}
+そしてこの範囲は長さ$\ell$が大きいほど大きく、
+\begin{align*}
+  (\ell^S\textrm{の実現する範囲}) \subset (\ell^L\textrm{の実現する範囲})
+\end{align*}
 が分かる。
-よって如何なるタイミングで長さ$l^S$の振り子が離軸しても、
+よって如何なるタイミングで長さ$\ell^S$の振り子が離軸しても、
 その最高到達点の高さと
-同じ最高到達点を持つ長さ$l^L$の振り子の離軸タイミングが存在し、
+同じ最高到達点を持つ長さ$\ell^L$の振り子の離軸タイミングが存在し、
 その離軸タイミングでの
-長さ$l^L$の振り子の回転数は
-長さ$l^S$の振り子の回転数より大きい。
-よって長さ$l^S$の振り子の如何なる回転数に対しても
-それより大きい回転数が長さ$l^L$によって実現されることが分かるから、
+長さ$\ell^L$の振り子の回転数は
+長さ$\ell^S$の振り子の回転数より大きい。
+よって長さ$\ell^S$の振り子の如何なる回転数に対しても
+それより大きい回転数が長さ$\ell^L$によって実現されることが分かるから、
 "単振り子は長いほうが高い回転数を実現する"ことが証明される。
 
 
@@ -344,60 +352,61 @@ $\Omega$は式\ref{eq:Omega}により
 着地点の高さを$-h_0 (h_0>0)$とする。
 この$h_0$は落差ともとれる。
 離軸後の最高高度$h$は式\ref{eq:energy_vertical:conclusion}により
-\begin{align}
-  h = -\frac{1}{4}l\sin\theta (3\sin^2\theta+1)
-\end{align}
+\begin{align*}
+  h = -\frac{1}{4}\ell\sin\theta (3\sin^2\theta+1)
+\end{align*}
 で表される。
 これにより、最高高度到達後から着地点までにかかる落下時間$t_{down}$は
-\begin{align}
+\begin{align*}
   \frac{1}{2}g{t_{down}}^2
   &= h - (-h_0)
   \\
   t_{down}
   &= \sqrt{ \frac{2}{g} (h + h_0)}
-  = \sqrt{ \frac{2}{g} \left( -\frac{1}{4}l\sin\theta (3\sin^2\theta+1) + h_0 \right) }
+  = \sqrt{ \frac{2}{g} \left( -\frac{1}{4}\ell\sin\theta (3\sin^2\theta+1) + h_0 \right) }
   \\
-  & = \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}l\sin\theta (3\sin^2\theta+1) \right) }
-\end{align}
+  & = \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}\ell\sin\theta (3\sin^2\theta+1) \right) }
+\end{align*}
 離軸後に最高高度に達するまでの時間$t_{up}$は
-\begin{align}
+\begin{align*}
   t_{up} 
-  &= \frac{v_y}{g} = \frac{l\omega(-\cos\theta)}{g}
+  &= \frac{v_y}{g} = \frac{\ell\omega(-\cos\theta)}{g}
   \\
-  &= \frac{l(-\cos\theta)}{g} \sqrt{ \frac{3g}{2l} \sin\theta }
+  &= \frac{\ell(-\cos\theta)}{g} \sqrt{ \frac{3g}{2\ell} \sin\theta }
   \\
-  &= \sqrt{ \frac{l^2(-\cos\theta)^2}{g^2} \frac{3g}{2l} \sin\theta }
+  &= \sqrt{ \frac{\ell^2(-\cos\theta)^2}{g^2} \frac{3g}{2\ell} \sin\theta }
   \\
-  &= \sqrt{ \frac{3}{2g} l\sin\theta (1-\sin^2\theta) }
-\end{align}
+  &= \sqrt{ \frac{3}{2g} \ell\sin\theta (1-\sin^2\theta) }
+\end{align*}
 で表される。
 よって滞空時間$T_{air}$は
-\begin{align}
+\begin{align*}
   T_{air} 
   &= t_{down} + t_{up}
   \\
-  &= \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}l\sin\theta (3\sin^2\theta+1) \right) }
-  + \sqrt{ \frac{3}{2g} l\sin\theta (1-\sin^2\theta) }
-\end{align}
+  &= \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}\ell\sin\theta (3\sin^2\theta+1) \right) }
+  + \sqrt{ \frac{3}{2g} \ell\sin\theta (1-\sin^2\theta) }
+\end{align*}
 
 また、空中での回転速度$\Omega$は式\label{eq:Omega}によってすでに表されているから、
 回転数$N_r$は
 \begin{align}
   N_r 
   &= \theta + T_{air} \cdot \Omega
+  \notag
   \\
   &= \theta + 
-  \left( \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}l\sin\theta (3\sin^2\theta+1) \right) }
-    + \sqrt{ \frac{3}{2g} l\sin\theta (1-\sin^2\theta) } 
+  \left( \sqrt{ \frac{2}{g} \left( h_0 - \frac{1}{4}\ell\sin\theta (3\sin^2\theta+1) \right) }
+    + \sqrt{ \frac{3}{2g} \ell\sin\theta (1-\sin^2\theta) } 
   \right)
   \cdot
-  \frac{1}{I} \sqrt{ \frac{m^2 g}{6} l^3 \sin\theta }
+  \frac{1}{I} \sqrt{ \frac{m^2 g}{6} \ell^3 \sin\theta }
   \label{eq:spin_number_conclusion}
 \end{align}
-と長さ$l$と離軸時の角度$\theta$をパラメータとして
+と長さ$\ell$と離軸時の角度$\theta$をパラメータとして
 解析的に求められる。
 
-しかし、長さ$l$が与えられたとき、
+しかし、長さ$\ell$が与えられたとき、
 回転数が最大になる離軸時の角度$\theta$を
 この式から解析的に決定することは
 容易ではない。
@@ -423,10 +432,10 @@ $\Omega$は式\ref{eq:Omega}により
 式\ref{eq:spin_number_conclusion}から
 想像できる。
 最高高度到達以降の時間である$t_{down}$が
-長さ$l$が小さいために離軸時の角度$\theta$によらず、
+長さ$\ell$が小さいために離軸時の角度$\theta$によらず、
 落差$h_0$の値によって大体定まり、
 最高高度に到達するまでの時間$t_{up}$
-のみが長さ$l$に対して増加するからである。
+のみが長さ$\ell$に対して増加するからである。
 
 この点から考えると、
 長さがある程度長い部分に関して滞空時間があまり増大しないことは
